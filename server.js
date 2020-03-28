@@ -2,8 +2,6 @@ const express = require("express");
 var exphbs = require("express-handlebars");
 
 
-
-
 //Create server app and set port
 let server = express();
 const PORT = process.env.PORT || 8080;
