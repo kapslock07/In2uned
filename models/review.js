@@ -4,23 +4,23 @@ module.exports = function(sequelize, DataTypes){
 
         review_name: {
             type: DataTypes.STRING,
-            notNull: true
+            allowNull: true
         },
         api_id: {
             type: DataTypes.STRING,
-            notNull: true
+            allowNull: true
         },
         rating: {
             type: DataTypes.DOUBLE,
-            notNull: true
+            allowNull: true
         },
         review_text: {
             type: DataTypes.STRING,
-            notNull: true
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INT,
-            notNull: true
+            allowNull: true
         }
     });
 
