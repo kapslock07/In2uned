@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes){
 
         user_name: {
             type: DataTypes.STRING,
-            notNull: true
+            allowNull: true
         }
     });
 
