@@ -15,6 +15,14 @@
 
             <div class="card-body feed-card">
                 <h5 class="card-title">Feed</h5>
+
+                {{#each reviews}}
+                    <div>
+                        <h4>{{username}}</h4>
+                        <p>more infor the actual review text</p>
+                        <p>{{stars}} stars</p>
+                    </div>
+                {{/each}}
                 <p class="card-text">Here is where the latest posts will be.</p>
             </div>
         </div>

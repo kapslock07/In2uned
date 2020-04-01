@@ -31,7 +31,7 @@ footer {
     background: #37474F;
     border-top: 8px solid red;
     height: 50px;
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     width: 100%;
     font-family: 'Mada', sans-serif;
