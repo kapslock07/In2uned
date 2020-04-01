@@ -15,6 +15,15 @@ module.exports = function(server){
 
     server.get("/callback", (req, res) => {
 
+        let reqURL = req.originalUrl;
+
+        let authCode = '';
+
+        if(reqURL.includes("/callback?code=")){
+            authCode = reqURL.substring(15);
+        }
+        
+
         res.render("index");
     });
 
