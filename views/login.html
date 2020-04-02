@@ -2,23 +2,20 @@
 <htmL>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in2uned</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>in2uned</title>
+    <!-- Bootstrap Link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <!-- Bootstrap Link-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-        <!-- Custom Styles -->
-        <link rel="stylesheet" href="/assets/css/style.css">
-    </head>
-
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/public/assets/css/style.css">
 </head>
 
-<body background="https://ichef.bbci.co.uk/images/ic/480xn/p05smlv4.jpg">
+<body>
+    <img src="https://ichef.bbci.co.uk/images/ic/480xn/p05smlv4.jpg" id="bg" alt="">
     <div id="login">
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
@@ -35,6 +32,15 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+
+            $('#Login').click(function () {
+                console.log("I'm in the click");
+                window.location = "https://accounts.spotify.com/en/login/" + this.id;
+            });
+
+        </script>
 </body>
 
 </html>
