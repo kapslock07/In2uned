@@ -22,7 +22,7 @@ require("./routes/apiroutes")(server);
 
 
 server.listen(PORT, (err) => {
-    if(err)throw err;
+    if (err) throw err;
 
     console.log(`Listening in port: ${PORT}`);
 });
