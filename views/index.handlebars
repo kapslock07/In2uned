@@ -1,1 +1,31 @@
-<h1>success</h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card top-card text-center text-white mt-2" style="width: 28rem;">
+            <img class="card-img-top" src="/assets/images/hands.jpg" alt="Crowd">
+            <div class="card-body">
+                <p class="card-text">Review music. Share with your freinds.</p>
+                <button type="button" class="btn btn-outline-light btn-lg">Write A Review!</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row p-2">
+    <div class="col-md-12">
+        <div class="card text-white bg-dark mb-3" style="max-width: 56rem;">
+
+            <div class="card-body feed-card">
+                <h5 class="card-title">Feed</h5>
+
+                {{#each reviews}}
+                <div>
+                    <h4>{{username}}</h4>
+                    <p>more infor the actual review text</p>
+                    <p>{{stars}} stars</p>
+                </div>
+                {{/each}}
+                <p class="card-text">Here is where the latest posts will be.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
