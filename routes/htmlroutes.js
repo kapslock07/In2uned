@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = function(server){
 
-    server.get("/", (req, res) => {
+    server.get("/login", (req, res) => {
 
         let scopes = 'user-read-private user-read-email';
         let redirect_uri = "http://localhost:8080/callback";
