@@ -1,31 +1,38 @@
 
 
-module.exports = function(server){
+module.exports = function (server) {
 
     server.get("/", (req, res) => {
         let object = {
             reviews: [
-                {username: "cool thing", stars:5},
-                {username: "cool thing 2", stars:8},
-                {username: "cool thing 3", stars:8},
-                {username: "cool thing 4", stars:8}
+                { username: "User 1", review_name: "song 1", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkf" },
+                { username: "User 2", review_name: "song 2", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
+                { username: "User 3", review_name: "song 3", rating: 3, review_text: "sdjlfhdasjkhfdsajhfadsjkhflsadjkfgijasd" },
+                { username: "User 4", review_name: "song 4", rating: 2, review_text: "asdghfjkldgsahfjkgasdfhjdsagfkhj" }
             ],
-            username: "josh"
+            username: "ryan"
         };
         res.render("index", object);
     });
 
-    server.get("/entries", (req, res) => {
+    server.get("/myreviews", (req, res) => {
         let object = {
             reviews: [
-                {name: "cool thing"},
-                {name: "cool thing 2"},
-                {name: "cool thing 3"},
-                {name: "cool thing 4"}
+                { review_name: "song 1", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkfdha" },
+                { review_name: "song 2", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
             ],
-            other: "whatever"
+            username: "My User Name"
         };
         res.render("entries", object);
+    });
+
+
+    server.get("/logout", (req, res) => {
+        let object = {
+
+            logout: "Where the hell are you going?"
+        };
+        res.render("logout", object);
     });
 
 

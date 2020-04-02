@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-12">
         <div class="card top-card text-center text-white mt-2" style="width: 28rem;">
             <img class="card-img-top" src="/assets/images/hands.jpg" alt="Crowd">
             <div class="card-body">
@@ -9,22 +9,30 @@
         </div>
     </div>
 </div>
-<div class="row p-2">
-    <div class="col-md-12">
-        <div class="card text-white bg-dark mb-3" style="max-width: 56rem;">
+<div class="row">
+    <div class="col-12">
+        <div class="text-white reviewbox">
 
             <div class="card-body feed-card">
-                <h5 class="card-title">Feed</h5>
-
-                {{#each reviews}}
-                    <div>
-                        <h4>{{username}}</h4>
-                        <p>more infor the actual review text</p>
-                        <p>{{stars}} stars</p>
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="card-title">Feed</h4>
                     </div>
-                {{/each}}
-                <p class="card-text">Here is where the latest posts will be.</p>
+                </div>
+                <div class="row">
+                    {{#each reviews}}
+                    <div class="reviews col-5">
+
+                        <h3>Reviewing: {{review_name}}</h3>
+                        <h5>Rating: {{rating}}/5</h5>
+                        <p>User: {{username}}</p>
+                        <p>{{review_text}}</p>
+
+                    </div>
+                    {{/each}}
+                </div>
             </div>
+
         </div>
     </div>
 </div>
