@@ -5,25 +5,24 @@ module.exports = function (server) {
     server.get("/", (req, res) => {
         let object = {
             reviews: [
-                { username: "User 1", review_name: "song 1", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkf" },
-                { username: "User 2", review_name: "song 2", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
-                { username: "User 3", review_name: "song 3", rating: 3, review_text: "sdjlfhdasjkhfdsajhfadsjkhflsadjkfgijasd" },
-                { username: "User 4", review_name: "song 4", rating: 2, review_text: "asdghfjkldgsahfjkgasdfhjdsagfkhj" }
+                { username: "Ryan", review_name: "Althea", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkf" },
+                { username: "Christopher", review_name: "Stairway to Heaven", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
+                { username: "Nicholas", review_name: "Moonage Daydream", rating: 3, review_text: "sdjlfhdasjkhfdsajhfadsjkhflsadjkfgijasd" },
+                { username: "Corey", review_name: "Pale Blue Eyes", rating: 2, review_text: "asdghfjkldgsahfjkgasdfhjdsagfkhj" }
             ],
             username: "ryan"
         };
-        res.render("index", object);
+        res.render("feed", object);
     });
 
     server.get("/myreviews", (req, res) => {
         let object = {
             reviews: [
-                { review_name: "song 1", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkfdha" },
-                { review_name: "song 2", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
+                { review_name: "Wish You Were Here", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkfdha" },
             ],
-            username: "My User Name"
+            username: "Ryan"
         };
-        res.render("entries", object);
+        res.render("myreviews", object);
     });
 
 

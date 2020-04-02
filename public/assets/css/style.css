@@ -32,7 +32,7 @@ h4 {
     height: 165px;
     margin-bottom: 30px;
     background: rgba(204, 204, 204, 0.3);
-
+    overflow: hidden;
   }
   
   .reviewbox {
