@@ -2,30 +2,32 @@ require("dotenv").config();
 
 module.exports = function (server) {
 
+
     server.get("/", (req, res) => {
-        let object = {
-            reviews: [
-                { username: "cool thing", stars: 5 },
-                { username: "cool thing 2", stars: 8 },
-                { username: "cool thing 3", stars: 8 },
-                { username: "cool thing 4", stars: 8 }
-            ],
-            username: "josh"
-        };
-        res.render("index", object);
+
     });
 
-    server.get("/entries", (req, res) => {
+    server.get("/feed", (req, res) => {
         let object = {
             reviews: [
-                { username: "cool thing", stars: 5 },
-                { username: "cool thing 2", stars: 8 },
-                { username: "cool thing 3", stars: 8 },
-                { username: "cool thing 4", stars: 8 }
+                { username: "Ryan", review_name: "Althea", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkf" },
+                { username: "Christopher", review_name: "Stairway to Heaven", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
+                { username: "Nicholas", review_name: "Moonage Daydream", rating: 3, review_text: "sdjlfhdasjkhfdsajhfadsjkhflsadjkfgijasd" },
+                { username: "Corey", review_name: "Pale Blue Eyes", rating: 2, review_text: "asdghfjkldgsahfjkgasdfhjdsagfkhj" }
             ],
-            other: "username"
+            username: "ryan"
         };
-        res.render("entries", object);
+        res.render("feed", object);
+    });
+
+    server.get("/myreviews", (req, res) => {
+        let object = {
+            reviews: [
+                { review_name: "Wish You Were Here", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkfdha" },
+            ],
+            username: "Ryan"
+        };
+        res.render("myreviews", object);
     });
 
 
