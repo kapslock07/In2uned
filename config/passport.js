@@ -2,7 +2,6 @@ let passport = require("passport");
 let OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 require("dotenv").config();
 const axios = require("axios");
-
 let db = require("../models");
 
 passport.use('provider', new OAuth2Strategy({
