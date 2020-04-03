@@ -22,9 +22,9 @@ server.use(passport.session());
 
 
 //Routes
-
 require("./routes/htmlroutes")(server);
 require("./routes/authRoutes")(server, passport);
+
 
 db.sequelize.sync().then( () => {
     server.listen(PORT, () => {
