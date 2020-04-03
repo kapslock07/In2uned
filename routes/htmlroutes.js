@@ -2,9 +2,8 @@ require("dotenv").config();
 
 module.exports = function (server) {
 
-
     server.get("/", (req, res) => {
-
+        res.render("login");
     });
 
     server.get("/feed", (req, res) => {
