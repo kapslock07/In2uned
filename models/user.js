@@ -1,11 +1,22 @@
-
 module.exports = function(sequelize, DataTypes){
 
     let User = sequelize.define("User", {
 
+        access_token: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        refresh_token: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         user_name: {
             type: DataTypes.STRING,
-            allowNull: true
+            defaultValue: ""
+        },
+        img_url: {
+            type: DataTypes.STRING,
+            defaultValue: ""
         }
     });
 

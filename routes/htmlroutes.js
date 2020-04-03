@@ -1,5 +1,6 @@
 require("dotenv").config();
 const db = require("../models");
+let isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (server) {
 
@@ -8,7 +9,7 @@ module.exports = function (server) {
         res.render("login");
     });
 
-    server.get("/feed", (req, res) => {
+    server.get("/feed", isAuthenticated, (req, res) => {
         db.Review.findAll({
             include: [db.User]
         }).then(data => {

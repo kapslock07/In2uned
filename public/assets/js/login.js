@@ -1,8 +1,8 @@
 $(document).ready(() => {
 
     $("#Login").on("click", (event) => {
-        event.preventDefault();
+       /// event.preventDefault();
 
-        window.location.assign("/login");
+        //window.location.assign("/login");
     });
 });
