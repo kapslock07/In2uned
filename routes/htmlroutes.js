@@ -6,7 +6,7 @@ module.exports = function (server) {
 
 
     server.get("/", (req, res) => {
-        res.render("login");
+        res.render("login", {layout: "loginLayout.handlebars"});
     });
 
     server.get("/feed", isAuthenticated, (req, res) => {
