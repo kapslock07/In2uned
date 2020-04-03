@@ -1,6 +1,4 @@
 require("dotenv").config();
-const axios = require("axios");
-const qs = require('qs')
 const db = require("../models");
 
 module.exports = function (server) {
@@ -11,24 +9,13 @@ module.exports = function (server) {
     });
 
     server.get("/feed", (req, res) => {
-        let object = {
-            reviews: [
-                { username: "Ryan", review_name: "Althea", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkf" },
-                { username: "Christopher", review_name: "Stairway to Heaven", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
-                { username: "Nicholas", review_name: "Moonage Daydream", rating: 3, review_text: "sdjlfhdasjkhfdsajhfadsjkhflsadjkfgijasd" },
-                { username: "Corey", review_name: "Pale Blue Eyes", rating: 2, review_text: "asdghfjkldgsahfjkgasdfhjdsagfkhj" }
-            ],
-            username: "ryan"
-        };
-
         db.Review.findAll({
             include: [db.User]
         }).then(data => {
-            res.render("feed", data);
-        });
-
-
-        
+            res.render("feed", {
+                reviews: buildObjectFromDB(data)
+            });
+        });  
     });
 
     server.get("/myreviews", (req, res) => {
@@ -51,6 +38,21 @@ module.exports = function (server) {
         };
         res.render("logout", object);
     });
+
+    buildObjectFromDB = (dbDat) => { //This function explcitly creates an array of objects from DB data that Handlebars will understand
+        let newObj = [];
+         dbDat.forEach(e => {
+            let data = e.dataValues;
+
+            newObj.push({
+                review_name: data.review_name,
+                rating: data.rating,
+                user_name: data.User.user_name,
+                review_text: data.review_text
+            });
+        });
+        return newObj;
+    }
 
 
 }

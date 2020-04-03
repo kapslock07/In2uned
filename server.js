@@ -1,5 +1,6 @@
 const express = require("express");
 var exphbs = require("express-handlebars");
+const db = require("./models");
 
 
 //Create server app and set port
@@ -19,12 +20,13 @@ server.set("view engine", "handlebars");
 require("./routes/htmlroutes")(server);
 require("./routes/authRoutes")(server);
 
-
-
-server.listen(PORT, (err) => {
-    if (err) throw err;
-
-    console.log(`Listening in port: ${PORT}`);
+db.sequelize.sync().then( () => {
+    server.listen(PORT, () => {
+    
+        console.log(`Listening in port: ${PORT}`);
+    });
 });
+
+
 
 

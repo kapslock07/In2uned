@@ -17,16 +17,14 @@ module.exports = function(sequelize, DataTypes){
         review_text: {
             type: DataTypes.STRING,
             allowNull: true
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true
         }
     });
 
     Review.associate = function(models) {
-        Review.hasMany(models.User, {
-            onDelete: "cascade"
+        Review.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
         });
     };
 
