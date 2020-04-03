@@ -1,23 +1,22 @@
 require("dotenv").config();
+const db = require("../models");
+let isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (server) {
 
 
     server.get("/", (req, res) => {
-
+        res.render("login");
     });
 
-    server.get("/feed", (req, res) => {
-        let object = {
-            reviews: [
-                { username: "Ryan", review_name: "Althea", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkf" },
-                { username: "Christopher", review_name: "Stairway to Heaven", rating: 4, review_text: "eJKFHDASLJKHFLJKSDAHFLJKADSHFLADSJKHF" },
-                { username: "Nicholas", review_name: "Moonage Daydream", rating: 3, review_text: "sdjlfhdasjkhfdsajhfadsjkhflsadjkfgijasd" },
-                { username: "Corey", review_name: "Pale Blue Eyes", rating: 2, review_text: "asdghfjkldgsahfjkgasdfhjdsagfkhj" }
-            ],
-            username: "ryan"
-        };
-        res.render("feed", object);
+    server.get("/feed", isAuthenticated, (req, res) => {
+        db.Review.findAll({
+            include: [db.User]
+        }).then(data => {
+            res.render("feed", {
+                reviews: buildObjectFromDB(data)
+            });
+        });  
     });
 
     server.get("/myreviews", (req, res) => {
@@ -31,31 +30,6 @@ module.exports = function (server) {
     });
 
 
-    server.get("/login", (req, res) => {
-
-        let scopes = 'user-read-private user-read-email';
-        let redirect_uri = "http://localhost:8080/callback";
-
-        res.redirect('https://accounts.spotify.com/authorize?client_id=' + process.env.API_CLIENT_ID +
-            '&response_type=code&redirect_uri=' + encodeURIComponent(redirect_uri) + '&scope=' + encodeURIComponent(scopes));
-    });
-
-
-
-    server.get("/callback", (req, res) => {
-
-        let reqURL = req.originalUrl;
-
-        let authCode = '';
-
-        if (reqURL.includes("/callback?code=")) {
-            authCode = reqURL.substring(15);
-        }
-
-
-        res.render("index");
-    });
-
     server.get("/logout", (req, res) => {
         let object = {
 
@@ -63,6 +37,21 @@ module.exports = function (server) {
         };
         res.render("logout", object);
     });
+
+    buildObjectFromDB = (dbDat) => { //This function explcitly creates an array of objects from DB data that Handlebars will understand
+        let newObj = [];
+         dbDat.forEach(e => {
+            let data = e.dataValues;
+
+            newObj.push({
+                review_name: data.review_name,
+                rating: data.rating,
+                user_name: data.User.user_name,
+                review_text: data.review_text
+            });
+        });
+        return newObj;
+    }
 
 
 }
