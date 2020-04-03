@@ -8,10 +8,9 @@ module.exports = function(server){
     server.get("/login", (req, res) => {
 
         let scopes = 'user-read-private user-read-email';
-        let redirect_uri = "http://localhost:8080/callback";
 
         res.redirect('https://accounts.spotify.com/authorize?client_id=' + process.env.API_CLIENT_ID +
-            '&response_type=code&redirect_uri=' + encodeURIComponent(redirect_uri) + '&scope=' + encodeURIComponent(scopes));
+            '&response_type=code&redirect_uri=' + encodeURIComponent(process.env.redirect_uri) + '&scope=' + encodeURIComponent(scopes));
     });
 
 
@@ -21,7 +20,6 @@ module.exports = function(server){
         let reqURL = req.originalUrl;
 
         let authCode = '';
-        let redirect_uri = "http://localhost:8080/callback";
 
         if (reqURL.includes("/callback?code=")) {
             authCode = reqURL.substring(15);
@@ -38,7 +36,7 @@ module.exports = function(server){
             data: qs.stringify({
                 grant_type: "authorization_code",
                 code: authCode,
-                redirect_uri: redirect_uri,
+                redirect_uri: process.env.redirect_uri,
                 client_id: process.env.API_CLIENT_ID,
                 client_secret: process.env.API_CLIENT_SECRET
             })

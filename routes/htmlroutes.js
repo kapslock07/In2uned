@@ -29,8 +29,6 @@ module.exports = function (server) {
     });
 
 
-
-
     server.get("/logout", (req, res) => {
         let object = {
 
