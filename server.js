@@ -17,7 +17,7 @@ server.set("view engine", "handlebars");
 //Routes
 
 require("./routes/htmlroutes")(server);
-require("./routes/apiroutes")(server);
+require("./routes/authRoutes")(server);
 
 
 
