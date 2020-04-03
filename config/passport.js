@@ -5,9 +5,6 @@ const axios = require("axios");
 
 let db = require("../models");
 
-console.log(process.env.redirect_uri);
-
-
 passport.use('provider', new OAuth2Strategy({
     authorizationURL: 'https://accounts.spotify.com/authorize',
     tokenURL: 'https://accounts.spotify.com/api/token',
