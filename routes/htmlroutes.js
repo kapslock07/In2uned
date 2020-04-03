@@ -4,7 +4,7 @@ module.exports = function (server) {
 
 
     server.get("/", (req, res) => {
-
+        res.render("login");
     });
 
     server.get("/feed", (req, res) => {
@@ -53,7 +53,7 @@ module.exports = function (server) {
         }
 
 
-        res.render("index");
+        res.redirect("/feed");
     });
 
     server.get("/logout", (req, res) => {
