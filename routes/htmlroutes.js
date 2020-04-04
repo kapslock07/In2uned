@@ -61,6 +61,19 @@ module.exports = function (server) {
         });
     });
 
+    server.post("/write/review", isAuthenticated, (req, res) => {
+
+    });
+
+    server.get("/write/review", isAuthenticated, (req, res) => {
+//THIS DOESNT WORK
+        res.render("writereview", {
+            imgURL: req.body.imgURL,
+            track_name: req.body.track_name,
+            track_artist: req.body.track_artist
+        });
+    });
+
     server.post("/myreviews", isAuthenticated, (req, res) => { 
 
     });

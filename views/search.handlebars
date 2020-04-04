@@ -1,7 +1,10 @@
+
+<h1>Tracks</h1>
+
 <div class="row mt-5">
     {{#each track}}
     <div class="col-5 searchResults">
-        <div class="row">
+        <div class="row" data-imgURl="{{imgURL}}" data-track_name="{{track_name}}" data-track_artist="{{track_artist}}">
             <div class="col-3 searchresultimg">
                 <img class="resultImage" src="{{imgURL}}" alt="Result Image Here" style="width:100px;height:100px;">
             </div>
@@ -10,9 +13,16 @@
                 <p>{{track_artist}}</p>
 
             </div>
-        </div>
+             <a id="chooseReviewItemButton" class="btn btn-primary">Review</a>
+        </div>       
     </div>
     {{/each}}
-
 </div>
+
+
+
+<script src="/assets/js/chooseReview.js"></script>
+
+
+
 
