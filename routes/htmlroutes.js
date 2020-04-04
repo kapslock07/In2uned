@@ -19,14 +19,27 @@ module.exports = function (server) {
         });  
     });
 
-    server.get("/myreviews", isAuthenticated, (req, res) => {
-        let object = {
-            reviews: [
-                { review_name: "Wish You Were Here", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkfdha" },
-            ],
-            username: "Ryan"
-        };
-        res.render("myreviews", object);
+    server.get("/myreviews", isAuthenticated, (req, res) => { //if there is a user it gets there id and retrieves there reviews
+        if(!req.user){
+            res.json({});
+        }
+        else{
+            let id = req.user.id;
+
+            db.Review.findAll({
+                where: {
+                    UserId: id
+                }
+            }).then(reviews => {
+                res.render("myreviews", {
+                    reviews: reviews
+                });
+            }); 
+        }
+    });
+
+    server.post("/myreviews", isAuthenticated, (req, res) => {
+
     });
 
     buildObjectFromDB = (dbDat) => { //This function explcitly creates an array of objects from DB data that Handlebars will understand
@@ -43,6 +56,4 @@ module.exports = function (server) {
         });
         return newObj;
     }
-
-
 }
