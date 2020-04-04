@@ -74,9 +74,9 @@ module.exports = function (server) {
 
         items.forEach(e => {
             builtItems.push({
-                imgURL: items.album.images[0].url,
-                track_name: items.name,
-                track_artist: items.artists[0].name
+                imgURL: e.album.images[0].url,
+                track_name: e.name,
+                track_artist: e.artists[0].name
             });
         });
         return builtItems;
