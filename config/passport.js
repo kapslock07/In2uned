@@ -57,8 +57,10 @@ passport.use('provider', new OAuth2Strategy({
                 });
             }
         });
+    });
     }
 ));
+
 
 passport.serializeUser(function(user, done) {
     done(null, user);
