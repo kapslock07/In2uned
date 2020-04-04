@@ -1,5 +1,8 @@
 const express = require("express");
+var session = require("express-session");
+var passport = require("./config/passport");
 var exphbs = require("express-handlebars");
+const db = require("./models");
 
 
 //Create server app and set port
@@ -13,18 +16,18 @@ server.use(express.json());
 server.engine("handlebars", exphbs({ defaultLayout: "main" }));
 server.set("view engine", "handlebars");
 
+server.use(session({ secret: "awd728%%4;", resave: true, saveUninitialized: true }));
+server.use(passport.initialize());
+server.use(passport.session());
+
 
 //Routes
-
 require("./routes/htmlroutes")(server);
-require("./routes/apiroutes")(server);
+require("./routes/authRoutes")(server, passport);
 
 
-
-server.listen(PORT, (err) => {
-    if (err) throw err;
-
-    console.log(`Listening in port: ${PORT}`);
+db.sequelize.sync().then( () => {
+    server.listen(PORT, () => {
+        console.log(`Listening in port: ${PORT}`);
+    });
 });
-
-

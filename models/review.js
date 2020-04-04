@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes){
-    let Review = sequelize.define("Reviews", {
+    let Review = sequelize.define("Review", {
 
         review_name: {
             type: DataTypes.STRING,
@@ -17,16 +17,14 @@ module.exports = function(sequelize, DataTypes){
         review_text: {
             type: DataTypes.STRING,
             allowNull: true
-        },
-        user_id: {
-            type: DataTypes.INT,
-            allowNull: true
         }
     });
 
     Review.associate = function(models) {
-        Review.hasMany(models.Users, {
-            onDelete: "cascade"
+        Review.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
         });
     };
 
