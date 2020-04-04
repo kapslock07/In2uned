@@ -19,7 +19,7 @@ module.exports = function (server) {
         });  
     });
 
-    server.get("/myreviews", (req, res) => {
+    server.get("/myreviews", isAuthenticated, (req, res) => {
         let object = {
             reviews: [
                 { review_name: "Wish You Were Here", rating: 5, review_text: "dfhjajdshfadsfjksadhfdasjlkfhdasljkfhdskjfhadsljkfdha" },
@@ -27,15 +27,6 @@ module.exports = function (server) {
             username: "Ryan"
         };
         res.render("myreviews", object);
-    });
-
-
-    server.get("/logout", (req, res) => {
-        let object = {
-
-            logout: "Where the hell are you going?"
-        };
-        res.render("logout", object);
     });
 
     buildObjectFromDB = (dbDat) => { //This function explcitly creates an array of objects from DB data that Handlebars will understand
