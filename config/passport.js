@@ -28,7 +28,7 @@ passport.use('provider', new OAuth2Strategy({
             }
         }).then(dbUser => {
     
-            if(!dbUser){
+            if(!dbUser){ //creates user if doesnt exist
                 db.User.create({
                     access_token: accessToken,
                     refresh_token: refreshToken,
@@ -38,8 +38,21 @@ passport.use('provider', new OAuth2Strategy({
                     return done(null, createdUser);
                 });
             }
-            else {
-                return done(null, dbUser);
+            else if(dbUser){ //updates user token and img url if exists
+                db.User.update(
+                    {
+                        access_token: accessToken,
+                        refreshToken: refreshToken,
+                        img_url: img_url
+                    },
+                    {
+                        where: {
+                            user_name: user_name
+                        }
+                    }
+                ).then((updatedUser) => {
+                    return done(null, updatedUser);
+                });
             }
         });
     });
