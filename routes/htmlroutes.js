@@ -41,19 +41,19 @@ module.exports = function (server) {
     });
 
     server.get("/search", isAuthenticated, (req,res) => {
-        res.render("search");
+        res.render("reviewchoice");
     })
 
     server.post("/search", isAuthenticated, (req,res)=> {
         let query = req.body.query;
 
-        let queryURL = `https://api.spotify.com/v1/search?q=${query}&type=track`;
-
-        console.log(req.user);
+        let queryURL = `https://api.spotify.com/v1/search?q=${query}&type=track&market=US&limit=10`;
 
         axios.get(queryURL, { headers: { Authorization: `Bearer ${req.user.access_token}`} }
-        ).then(data => {
-            console.log(data);
+        ).then(response => {
+            res.render("reviewchoice", {
+                track: buildTrackObject(response.data.tracks.items)
+            });
         })
         .catch(error => {
             console.log('error' + error);
@@ -66,6 +66,20 @@ module.exports = function (server) {
 
     refreshAccessToken = (dbUser, res) => {
 
+    }
+
+    buildTrackObject = (items) => {
+
+        let builtItems = [];
+
+        items.forEach(e => {
+            builtItems.push({
+                imgURL: items.album.images[0].url,
+                track_name: items.name,
+                track_artist: items.artists[0].name
+            });
+        });
+        return builtItems;
     }
 
     buildObjectFromDB = (dbDat) => { //This function explcitly creates an array of objects from DB data that Handlebars will understand
