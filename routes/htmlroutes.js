@@ -4,8 +4,8 @@ let isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (server) {
 
-
     server.get("/", (req, res) => {
+
         res.render("login", {layout: "loginLayout.handlebars"});
     });
 
