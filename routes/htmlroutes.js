@@ -38,10 +38,7 @@ module.exports = function (server) {
         }
     });
 
-    server.post("/myreviews", isAuthenticated, (req, res) => {
-
-
-    });
+    server.post("/myreviews", isAuthenticated, (req, res) => { });
 
     buildObjectFromDB = (dbDat) => { //This function explcitly creates an array of objects from DB data that Handlebars will understand
         let newObj = [];
