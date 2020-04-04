@@ -7,7 +7,7 @@ body {
     background-size: 100% 25%;
 }
 
-.bg-img {
+.bg-img {   
     background-image: url("https://rachelcorbett.com.au/wp-content/uploads/2017/08/Drawing-of-man-playing-music-on-a-guitar.jpg");
     width: 100%;
     background-position: center;
@@ -91,12 +91,28 @@ h3 {
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis; 
+    height: 120px
+
 }
 .resultImage {
 position: relative;
 top: 50%;
 transform: translateY(-50%);
 }
-p{
-        : 
+
+#trackName {
+    font-family: 'Paytone One', sans-serif;
+    font-style: 'regular';
+    font-size: 24px;
+    height: 36px;
+    white-space: nowrap; 
+    overflow:hidden;
+    text-overflow: ellipsis;
+
+}
+
+#trackArtist {
+    font-family: 'Nobile', sans-serif;
+    font-style: italic;
+    text-overflow: ellipsis; 
 }
