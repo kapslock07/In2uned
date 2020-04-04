@@ -16,7 +16,7 @@ server.use(express.json());
 server.engine("handlebars", exphbs({ defaultLayout: "main" }));
 server.set("view engine", "handlebars");
 
-server.use(session({ secret: "awd728%%4;", resave: true, saveUninitialized: true }));
+server.use(session({ secret: "magic kat"}));
 server.use(passport.initialize());
 server.use(passport.session());
 

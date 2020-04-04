@@ -28,18 +28,33 @@ passport.use('provider', new OAuth2Strategy({
             }
         }).then(dbUser => {
     
-            if(!dbUser){
+            if(!dbUser){ //creates user if doesnt exist
                 db.User.create({
                     access_token: accessToken,
                     refresh_token: refreshToken,
                     user_name: user_name,
                     img_url: img_url
-                }).then(function(createdUser){
+                }).then((createdUser) => {
+                    console.log("created USer: " + createdUser);
                     return done(null, createdUser);
                 });
             }
-            else {
-                return done(null, dbUser);
+            else if(dbUser){ //updates user token and img url if exists
+                dbUser.update(
+                    {
+                        access_token: accessToken,
+                        refreshToken: refreshToken,
+                        img_url: img_url
+                    },
+                    {
+                        where: {
+                            user_name: user_name
+                        }
+                    }
+                ).then((updatedUser) => {
+                    console.log("Updated USer: " + updatedUser);
+                    return done(null, updatedUser);
+                });
             }
         });
     });
@@ -47,13 +62,12 @@ passport.use('provider', new OAuth2Strategy({
 ));
 
 
-passport.serializeUser(function(user, cb) {
-    cb(null, user);
-});
-
-passport.deserializeUser(function(obj, cb) {
-    cb(null, obj);
+passport.serializeUser(function(user, done) {
+    done(null, user);
 });
   
-
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
+  
 module.exports = passport;
