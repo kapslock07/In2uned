@@ -41,17 +41,18 @@ module.exports = function (server) {
     });
 
     server.get("/search", isAuthenticated, (req,res) => {
-        res.render("reviewchoice");
-    })
+        res.render("search", {layout: "searchLayout.handlebars"});
+    });
 
-    server.post("/search", isAuthenticated, (req,res)=> {
-        let query = req.body.query;
+    server.get("/api/search/:query", isAuthenticated, (req,res)=> {
+        let query = req.params.query;
 
         let queryURL = `https://api.spotify.com/v1/search?q=${query}&type=track&market=US&limit=10`;
 
         axios.get(queryURL, { headers: { Authorization: `Bearer ${req.user.access_token}`} }
         ).then(response => {
-            res.render("reviewchoice", {
+            res.render("search", {
+                layout: "searchLayout.handlebars",
                 track: buildTrackObject(response.data.tracks.items)
             });
         })
