@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in2uned</title>
+
+    <!-- Bootstrap Link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--JQuery Link-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand text-danger" href="/feed">In2uned</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/feed">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/myreviews">My Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Artist/Album/Song"
+                        aria-label="Search">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div id="main-container" class="container">
+
+            <div class="row mt-5">
+                <div class="col-12">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="qInput" id="reviewSearchLabel">Search for an Artist, Album, or Song to Review</label>
+                            <input type="text" class="form-control" id="qInput" placeholder="Enter Artist, Album, or Song">
+                        </div>
+                        <button type="submit" id="searchButton" class="btn btn-outline-danger my-2 my-sm-0">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+            <script src="/assets/js/search.js"></script>
+
+             {{{body}}}
+
+    </div>
+
+    <!--Javascript-->
+    <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

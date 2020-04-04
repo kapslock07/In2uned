@@ -1,0 +1,18 @@
+<div class="row mt-5">
+    {{#each track}}
+    <div class="col-5 searchResults">
+        <div class="row">
+            <div class="col-3 searchresultimg">
+                <img class="resultImage" src="{{imgURL}}" alt="Result Image Here" style="width:100px;height:100px;">
+            </div>
+            <div class="col-9  text-white">
+                <p>{{track_name}}</p>
+                <p>{{track_artist}}</p>
+
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+</div>
+
