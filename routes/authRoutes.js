@@ -12,4 +12,9 @@ module.exports = function(server, passport){
         res.redirect("/feed");
     });
 
+    server.get("/logout", (req, res) => {
+        req.logout();
+        res.redirect("/");
+    });
+
 }
