@@ -96,4 +96,11 @@ module.exports = function (server) {
         });
         return newObj;
     }
+    server.get("/reviewchoice", (req, res) => {
+        let track = {
+
+            logout: "Where the hell are you going?"
+        };
+        res.render("reviewchoice");
+    });
 }

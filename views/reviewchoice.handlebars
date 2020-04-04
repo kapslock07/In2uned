@@ -1,0 +1,32 @@
+<div class="row mt-5">
+    <div class="col-12">
+
+        <form>
+            <div class="form-group">
+                <label for="qInput" id="reviewSearchLabel">Search for an Artist, Album, or Song to Review</label>
+                <input type="text" class="form-control" id="qInput" placeholder="Enter Artist, Album, or Song">
+            </div>
+            <button type="submit" id="searchButton" class="btn btn-outline-danger my-2 my-sm-0">Submit</button>
+        </form>
+
+    </div>
+</div>
+
+<div class="row mt-5">
+    {{#each track}}
+    <div class="col-5 searchResults">
+        <div class="row">
+            <div class="col-3 searchresultimg">
+                <img class="resultImage" src="{{imgURL}}" alt="Result Image Here" style="width:100px;height:100px;">
+            </div>
+            <div class="col-9  text-white">
+                <p>{{track_name}}</p>
+                <p>{{track_artist}}</p>
+
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+</div>
+<script src="/assets/js/search.js"></script>
