@@ -11,6 +11,7 @@ module.exports = function (server) {
     });
 
     server.get("/feed", isAuthenticated, (req, res) => {
+        console.log(req.session.passport.user);
         db.Review.findAll({
             include: [db.User]
         }).then(data => {
@@ -39,7 +40,33 @@ module.exports = function (server) {
         }
     });
 
-    server.post("/myreviews", isAuthenticated, (req, res) => { });
+    server.get("/search", isAuthenticated, (req,res) => {
+        res.render("search");
+    })
+
+    server.post("/search", isAuthenticated, (req,res)=> {
+        let query = req.body.query;
+
+        let queryURL = `https://api.spotify.com/v1/search?q=${query}&type=track`;
+
+        console.log(req.user);
+
+        axios.get(queryURL, { headers: { Authorization: `Bearer ${req.user.access_token}`} }
+        ).then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.log('error' + error);
+        });
+    });
+
+    server.post("/myreviews", isAuthenticated, (req, res) => { 
+
+    });
+
+    refreshAccessToken = (dbUser, res) => {
+
+    }
 
     buildObjectFromDB = (dbDat) => { //This function explcitly creates an array of objects from DB data that Handlebars will understand
         let newObj = [];
