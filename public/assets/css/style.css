@@ -4,11 +4,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
-    background-size: 100% 25%;
+    background-size: 100% 30%;
 }
 
-body.img {
-    opacity: 0.3;
+background-image {
+    opacity: 0.1;
 }
 
 .bg-img {  
@@ -25,17 +25,14 @@ body.img {
     color: white;
 }
 
-/* .btn {
-    background-color: black;
-    color: red;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 10%;
-    opacity: 1;
-    float: right;
-    margin: 50px;
-} */
+.btn {
+    font-family: 'Nobile', sans-serif;
+}
+
+.explainer-text {
+    font-family: 'Mada', sans-serif;
+    text-align: center;
+}
 
 .navbar-brand {
     font-family: 'Monoton', cursive;
@@ -43,11 +40,6 @@ body.img {
 }
 
 .collapse {
-    font-family: 'Mada', sans-serif;
-}
-
-.card {
-    margin: auto;
     font-family: 'Mada', sans-serif;
 }
 
@@ -62,6 +54,8 @@ body.img {
 h4 {
     text-align: center;
     border-bottom: 1px solid red;
+    font-family: 'Monoton', cursive;
+
 }
 
 h3 {
@@ -101,7 +95,7 @@ h3 {
 .resultImage {
 position: relative;
 top: 50%;
-transform: translateY(-50%);
+transform: translateY(-45%);
 }
 
 #trackName {
@@ -121,6 +115,9 @@ transform: translateY(-50%);
     text-overflow: ellipsis; 
 }
 
-.starButton {
-    /* color: yellow;    */
+#writeReview {
+    display: block;
+    width: 500px;
+    margin: auto;
 }
+
