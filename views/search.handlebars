@@ -1,18 +1,34 @@
-<div class="row mt-5">
-    {{#each track}}
-    <div class="col-5 searchResults">
-        <div class="row">
-            <div class="col-3 searchresultimg">
-                <img class="resultImage" src="{{imgURL}}" alt="Result Image Here" style="width:100px;height:100px;">
-            </div>
-            <div class="col-9  text-white">
-                <p>{{track_name}}</p>
-                <p>{{track_artist}}</p>
+<div class="row mt-4">
+    <div class="col-12">
+        <h4 class="card-title text-danger pb-4">Choose Something to Review</h4>
+    </div>
+    <div class="row mt-4">
+        {{#each track}}
+        <div class="col-lg-5 col-md-12 searchResults">
+            <div class="row">
+                <div class="col-3 searchresultimg">
+                    <img class="resultImage" src="{{imgURL}}" alt="Result Image Here" style="width:100px;height:100px;">
+                </div>
+                <div class="col-9  text-white">
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="trackName">{{track_name}}</p>
+                            <div class="row">
+                                <div class="col-8">
+                                    <p id="trackArtist">{{track_artist}}</p>
+                                </div>
 
+                                <div class="col-4">
+                                    <button class="btn btn-outline-danger bg-dark my-2 my-sm-0 chooseToReview"
+                                        type="submit">Review</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        {{/each}}
     </div>
-    {{/each}}
-
 </div>
-
