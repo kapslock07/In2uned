@@ -40,28 +40,28 @@ module.exports = function (server) {
         }
     });
 
-    server.get("/search", isAuthenticated, (req,res) => {
-        res.render("search", {layout: "searchLayout.handlebars"});
+    server.get("/search", isAuthenticated, (req, res) => {
+        res.render("search", { layout: "searchLayout.handlebars" });
     });
 
-    server.get("/api/search/:query", isAuthenticated, (req,res)=> {
+    server.get("/api/search/:query", isAuthenticated, (req, res) => {
         let query = req.params.query;
 
         let queryURL = `https://api.spotify.com/v1/search?q=${query}&type=track&market=US&limit=10`;
 
-        axios.get(queryURL, { headers: { Authorization: `Bearer ${req.user.access_token}`} }
+        axios.get(queryURL, { headers: { Authorization: `Bearer ${req.user.access_token}` } }
         ).then(response => {
             res.render("search", {
                 layout: "searchLayout.handlebars",
                 track: buildTrackObject(response.data.tracks.items)
             });
         })
-        .catch(error => {
-            console.log('error' + error);
-        });
+            .catch(error => {
+                console.log('error' + error);
+            });
     });
 
-    server.post("/myreviews", isAuthenticated, (req, res) => { 
+    server.post("/myreviews", isAuthenticated, (req, res) => {
 
     });
 
@@ -103,5 +103,10 @@ module.exports = function (server) {
             logout: "Where the hell are you going?"
         };
         res.render("reviewchoice");
+    });
+
+    server.get("/writereview", (req, res) => {
+
+        res.render("writeReview");
     });
 }

@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
-    background-size: 100% 25%;
+    background-size: 100% 30%;
 }
 
 input {
@@ -12,27 +12,38 @@ input {
     margin-top: 20px;
 }
 
+background-image {
+    opacity: 0.1;
+}
+
+.bg-img {  
+    background-image: url("https://rachelcorbett.com.au/wp-content/uploads/2017/08/Drawing-of-man-playing-music-on-a-guitar.jpg");
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 650px;
+}
+
 .btn:hover {
     opacity: 1;
     color: white;
 }
+
 
 img {
     position: absolute;
     float: left;
 }
 
-/* .btn {
-    background-color: black;
-    color: red;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 10%;
-    opacity: 1;
-    float: right;
-    margin: 50px;
-} */
+.btn {
+    font-family: 'Nobile', sans-serif;
+}
+
+.explainer-text {
+    font-family: 'Mada', sans-serif;
+    text-align: center;
+}
 
 .navbar-brand {
     font-family: 'Monoton', cursive;
@@ -40,11 +51,6 @@ img {
 }
 
 .collapse {
-    font-family: 'Mada', sans-serif;
-}
-
-.card {
-    margin: auto;
     font-family: 'Mada', sans-serif;
 }
 
@@ -59,6 +65,8 @@ img {
 h4 {
     text-align: center;
     border-bottom: 1px solid red;
+    font-family: 'Monoton', cursive;
+
 }
 
 h3 {
@@ -93,16 +101,41 @@ h3 {
     margin-bottom: 30px;
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+    height: 120px
+
 }
 
 .resultImage {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  transform: translateY(-45%);
 }
 
-/* 
-p {
-    :
-} */
+#trackName {
+    font-family: 'Paytone One', sans-serif;
+    font-style: 'regular';
+    font-size: 24px;
+    height: 36px;
+    white-space: nowrap; 
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+.trackName:hover{
+    overflow: visible; 
+  
+}
+
+#trackArtist {
+    font-family: 'Nobile', sans-serif;
+    font-style: italic;
+    text-overflow: ellipsis; 
+}
+
+#writeReview {
+    display: block;
+    width: 500px;
+    margin: auto;
+}
+
