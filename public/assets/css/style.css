@@ -89,7 +89,6 @@ h3 {
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis; 
-    height: 120px
 
 }
 .resultImage {
@@ -122,6 +121,11 @@ transform: translateY(-45%);
 #writeReview {
     display: block;
     width: 500px;
+    margin: auto;
+}
+
+.spotifyplayer {
+    display: block;
     margin: auto;
 }
 
