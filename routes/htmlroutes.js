@@ -104,6 +104,7 @@ module.exports = function (server) {
         };
         res.render("reviewchoice");
     });
+
     server.get("/writereview", (req, res) => {
         res.render("writeReview");
     });
