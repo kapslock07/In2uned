@@ -1,9 +1,10 @@
 $(document).ready(() => {
-    $("#chooseReviewItemButton").on("click", (event) => {
+    $(".chooseToReview").on("click", (event) => {
          event.preventDefault();
 
-
-         let card = $("#chooseReviewItemButton").parent();
+         console.log("Fired");
+         console.log($(event.target));
+         let card = $(event.target).parent();
 
          let imgURL = $(card).attr("data-imgURL");
          let track_name = $(card).attr("data-track_name");
