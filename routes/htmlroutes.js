@@ -6,7 +6,6 @@ let axios = require("axios");
 module.exports = function (server) {
 
     server.get("/", (req, res) => {
-
         res.render("login", { layout: "loginLayout.handlebars" });
     });
 

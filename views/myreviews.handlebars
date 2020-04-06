@@ -1,3 +1,4 @@
+
 <div class="row mt-5">
     <div class="col-12">
         <h2 class="explainer-text text-light mb-4">Review music. Share with your freinds.</h2>
@@ -13,25 +14,29 @@
 <div class="row">
     <div class="col-12">
         <div class="text-white reviewbox">
-            <div class="row mt-4">
-                <div class="col-12">
-                    <h4 class="card-title text-danger pb-4">My Reviews</h4>
+
+            <div class="card-body feed-card">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="card-title">My Reviews</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    {{#each reviews}}
+                    <div class="reviews col-5">
+
+                        <h3>Reviewing: {{review_name}}</h3>
+                        <h5>Rating: {{rating}}/5</h5>
+                        <p>{{review_text}}</p>
+
+                    </div>
+                    {{/each}}
                 </div>
             </div>
-            <div class="row mt-4">
-                {{#each reviews}}
-                <div class="reviews col-5">
-
-                    <h3>Reviewing: {{review_name}}</h3>
-                    <h5>Rating: {{rating}}/5</h5>
-                    <p>{{review_text}}</p>
-
-                </div>
-                {{/each}}
-            </div>
-
         </div>
     </div>
+
 </div>
 
 <script src="/assets/js/writeReview.js"></script>
+
