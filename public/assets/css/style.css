@@ -47,12 +47,12 @@ img {
 
 .navbar-brand {
     font-family: 'Monoton', cursive;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 .brandLogo {
     font-family: 'Monoton', cursive;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 .collapse {
@@ -195,11 +195,11 @@ font-family: 'Mada', sans-serif;
 
 /* Hover state of the stars */
 .rating-stars ul > li.star.hover > i.fa {
-  color:#FFCC36;
+  color: rgba(255, 0, 0, 0.25);
 }
 
 /* Selected state of the stars */
 .rating-stars ul > li.star.selected > i.fa {
-  color:#FF912C;
+  color: red;
 }
 

@@ -1,11 +1,11 @@
-/* body {
+body {
     background-color: #181818;
     background-image: url("../images/sound50op.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
     background-size: 100% 30%;
-} */
+}
 
 #Login {
     margin: white 5px;
@@ -16,8 +16,7 @@
 
 #logincard {
     height: 370px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 10%;
     width: 400px;
     background-color: rgba(0, 0, 0, 0.5) !important;
     align-items: center;
@@ -25,7 +24,7 @@
 
 .brandLogo {
     font-family: 'Monoton', cursive;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 
