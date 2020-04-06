@@ -4,9 +4,6 @@ require("dotenv").config();
 const axios = require("axios");
 let db = require("../models");
 
-console.log(process.env.API_CLIENT_ID);
-console.log(process.env.API_CLIENT_SECRET);
-
 passport.use('provider', new OAuth2Strategy({
     authorizationURL: 'https://accounts.spotify.com/authorize',
     tokenURL: 'https://accounts.spotify.com/api/token',

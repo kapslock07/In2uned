@@ -146,7 +146,6 @@ module.exports = function (server) {
     });
 
     server.get("/writereview", (req, res) => {
-
-        res.render("writeReview");
+        res.render("writereview");
     });
 }
