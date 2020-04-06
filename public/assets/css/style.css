@@ -7,22 +7,21 @@ body {
     background-size: 100% 30%;
 }
 
+#Login {
+    margin: white 5px;
+    border: white 5px;
+    color: red;
+    position: absolute;
+}
+
+/* 
 input {
     margin-left: 260px;
     margin-top: 20px;
-}
+} */
 
 background-image {
     opacity: 0.1;
-}
-
-.bg-img {
-    background-image: url("https://rachelcorbett.com.au/wp-content/uploads/2017/08/Drawing-of-man-playing-music-on-a-guitar.jpg");
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 650px;
 }
 
 .btn:hover {
@@ -69,8 +68,8 @@ h4 {
 
 h3 {
     color: red;
-    margin-left: 100px;
-    margin-top: 50px;
+    font-size: 24px;
+    margin-top: 20px;
 }
 
 .reviews {
@@ -141,6 +140,7 @@ h3 {
     margin-bottom: auto;
     width: 400px;
     background-color: rgba(0, 0, 0, 0.5) !important;
+    align-items: center;
 }
 
 .spotifyplayer {
