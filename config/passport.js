@@ -7,8 +7,8 @@ let db = require("../models");
 passport.use('provider', new OAuth2Strategy({
     authorizationURL: 'https://accounts.spotify.com/authorize',
     tokenURL: 'https://accounts.spotify.com/api/token',
-    clientID: "5835fa531cd64d648e79f01e38d603ba",
-    clientSecret: "135c23c595d644b1844f1e1082615ba6",
+    clientID: process.env.API_CLIENT_ID,
+    clientSecret: process.env.API_CLIENT_SECRET,
     callbackURL: "/auth/spotify/callback"
 },
     function (accessToken, refreshToken, profile, done) {
@@ -37,6 +37,16 @@ passport.use('provider', new OAuth2Strategy({
                     }).then((createdUser) => {
                         console.log("created USer: " + createdUser);
                         return done(null, createdUser);
+                    }).catch((err) => {
+                        db.User.create({
+                            access_token: accessToken,
+                            refresh_token: refreshToken,
+                            user_name: user_name,
+                            img_url: "none"
+                        }).then((createdUser) => {
+                            console.log("created USer: " + createdUser);
+                            return done(null, createdUser);
+                        });
                     });
                 }
                 else if (dbUser) { //updates user token and img url if exists

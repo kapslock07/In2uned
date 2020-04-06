@@ -1,25 +1,34 @@
-<div class="row " style="margin-top: 50px">
+<div class="row" style="margin-top: 50px">
+    <div class="col-md-3">
+    </div>
     <div class="col-md-6 col-md-offset-3 form-container">
-        <h2>Review</h2>
+        <h2 class="explainer-text">Review</h2>
         <div class="row" id="post-review-box">
             <div class="col-md-12">
                 <form accept-charset="UTF-8" action="" method="post">
                     <textarea class="form-control animated" cols="50" id="new-review" name="comment"
                         placeholder="Enter your review here..." rows="5"></textarea>
 
-                    <div>
-                        <div class="container">
-                            <span id="rateMe1"></span>
+                    <h5>Rate Song from 1-5</h5>
+                    <div class="btn-toolbar mb-2" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-secondary">1</button>
+                            <button type="button" class="btn btn-secondary">2</button>
+                            <button type="button" class="btn btn-secondary">3</button>
+                            <button type="button" class="btn btn-secondary">4</button>
+                            <button type="button" class="btn btn-secondary">5</button>
                         </div>
-
-                        <!-- rating.js file -->
-                        <script src="../public/assets/js/writeReview.js"></script>
-                        <div class="row">
-                            <div class="col-sm-12 form-group">
-                                <button type="submit" class="btn btn-lg btn-block btn-outline-danger" id="postbtn"> Post
-                                </button>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <button type="submit" class="btn btn-lg btn-block btn-outline-danger" id="postbtn"> Post
+                            </button>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
