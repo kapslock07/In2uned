@@ -40,9 +40,15 @@ img {
 .explainer-text {
     font-family: 'Mada', sans-serif;
     text-align: center;
+    color:white
 }
 
 .navbar-brand {
+    font-family: 'Monoton', cursive;
+    font-size: 32px;
+}
+
+.brandLogo {
     font-family: 'Monoton', cursive;
     font-size: 32px;
 }
@@ -55,9 +61,7 @@ img {
     font-size: 24px;
 }
 
-.top-card {
-    background-image: linear-gradient(to bottom right, black, red, black);
-}
+
 
 h4 {
     text-align: center;
@@ -146,3 +150,9 @@ h3 {
     display: block;
     margin: auto;
 }
+
+h5 {
+color:white;
+font-family: 'Mada', sans-serif;
+}
+
