@@ -49,19 +49,34 @@ $(document).ready(() => {
         let track_name = $("#trackCard").attr("data-track_name");
         let track_artist = $("#trackCard").attr("data-track_artist");
         let track_id = $("#trackCard").attr("data-track_id");
-        let reviewText = $("#reviewText").val().trim();
+        let review_text = $("#reviewText").val().trim();
 
-        if(reviewText.replace( /\s/g, '').length == 0){//check if the user entered any text (exlcuding spaces)
+        if(review_text.replace( /\s/g, '').length == 0){//check if the user entered any text (exlcuding spaces)
             makeAlert("Please Input Text to your review");
         }
         else if(starValue === 0){//Check if the user chose a star value
             makeAlert("Please Select a Star Value");
         }
         else{ //If all checks out - Make the Post
-
-
+          //  console.log({imgURL, track_name, track_artist, track_id, review_text});
+            
+            $.post({
+                url: "/myreviews",
+                data: {
+                    imgURL: imgURL,
+                    track_name: track_name,
+                    track_artist: track_artist,
+                    track_id: track_id,
+                    rating: starValue,
+                    review_text: review_text
+                }
+            }).then((res) => {
+                if(res.saved){
+                    window.location.assign("/myreviews");
+                }
+                
+            }); 
         }
-
     });
 
     function makeAlert(message){ //This function creates an alert message on the page

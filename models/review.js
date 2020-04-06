@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: true
         },
         rating: {
-            type: DataTypes.DOUBLE,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         review_text: {
