@@ -114,6 +114,16 @@ h3 {
     height: 200px
 }
 
+.writeReviewSelection {
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 30px;
+    background: rgba(204, 204, 204, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 200px 
+}
+
 .resultImage {
     position: relative;
     top: 50%;
