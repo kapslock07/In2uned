@@ -18,12 +18,19 @@
                                     <p id="trackArtist">{{track_artist}}</p>
                                 </div>
 
-                                <div class="col-4">
-                                    <button class="btn btn-outline-danger bg-dark my-2 my-sm-0 chooseToReview"
+                                <div class="col-4" id="#trackCard" class="card" data-imgURL="{{imgURL}}"
+                                    data-track_name="{{track_name}}" data-track_artist="{{track_artist}}"
+                                    data-track_id="{{track_id}}">
+                                    <button id="chooseReviewItemButton" class="btn btn-outline-danger bg-dark my-2 my-sm-0 chooseToReview"
                                         type="submit">Review</button>
                                 </div>
-
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-l2 ml-2 spotifyplayer">
+                            <iframe src="https://open.spotify.com/embed/track/1Cc6rFGKZnUR6FFePuuXqB" width="340"
+                                height="75" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                         </div>
                     </div>
                 </div>
@@ -32,3 +39,6 @@
         {{/each}}
     </div>
 </div>
+
+<script src="/assets/js/chooseReview.js"></script>
+

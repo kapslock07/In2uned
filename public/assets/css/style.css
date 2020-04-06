@@ -142,3 +142,8 @@ h3 {
     width: 400px;
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
+
+.spotifyplayer {
+    display: block;
+    margin: auto;
+}
