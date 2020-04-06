@@ -50,9 +50,9 @@ module.exports = function (server) {
                     UserId: id
                 },
                 include: [db.User]
-            }).then(reviews => {
+            }).then(data => {
                 res.render("myreviews", {
-                    reviews: buildObjectFromDB(reviews)
+                    reviews: buildObjectFromDB(data)
                 });
             });
         }
