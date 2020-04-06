@@ -7,6 +7,11 @@ body {
     background-size: 100% 30%;
 }
 
+input {
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
 background-image {
     opacity: 0.1;
 }
@@ -23,6 +28,12 @@ background-image {
 .btn:hover {
     opacity: 1;
     color: white;
+}
+
+
+img {
+    position: absolute;
+    float: left;
 }
 
 .btn {
@@ -60,6 +71,8 @@ h4 {
 
 h3 {
     color: red;
+    margin-left: 100px;
+    margin-top: 50px;
 }
 
 .reviews {
@@ -69,7 +82,7 @@ h3 {
     margin-bottom: 30px;
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
 .stars {
@@ -91,10 +104,11 @@ h3 {
     text-overflow: ellipsis; 
 
 }
+
 .resultImage {
-position: relative;
-top: 50%;
-transform: translateY(-45%);
+  position: relative;
+  top: 50%;
+  transform: translateY(-45%);
 }
 
 #trackName {
