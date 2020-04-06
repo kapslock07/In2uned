@@ -53,8 +53,7 @@ passport.use('provider', new OAuth2Strategy({
                     dbUser.update(
                         {
                             access_token: accessToken,
-                            refreshToken: refreshToken,
-                            img_url: img_url
+                            refreshToken: refreshToken
                         },
                         {
                             where: {
