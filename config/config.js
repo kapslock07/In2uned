@@ -2,7 +2,7 @@ require("dotenv").config();
 module.exports = {
   "development": {
     "username": "root",
-    "password": process.env.DB_PASS,
+    "password": "iNotlNN4",
     "database": "in2uned_db_local",
     "host": "127.0.0.1",
     "dialect": "mysql",

@@ -7,12 +7,19 @@ body {
     background-size: 100% 30%;
 }
 
+#new-review {
+    margin-bottom: 10px;
+}
 
 #Login {
     margin: white 5px;
     border: white 5px;
+    color: pink;
+}
+
+.star-rating i {
     color: red;
-    position: absolute;
+    font-size: 24px;
 }
 
 /* 
