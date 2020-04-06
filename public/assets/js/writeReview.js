@@ -1,8 +1,7 @@
 $(document).ready(() => {
-    console.log("write Review");
     $("#writeReview").on("click", (event) => {
-        event.preventDefault();
-        console.log("write Review inside");
+         event.preventDefault();
+         
 
         window.location.assign("/search");
     });

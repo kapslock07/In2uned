@@ -4,25 +4,29 @@
         <p>
             Please provide your review below:
         </p>
-        <div class="row" id="post-review-box">
-            <div class="col-md-12">
-                <form accept-charset="UTF-8" action="" method="post">
-                    <input id="ratings-hidden" name="rating">
-                    <textarea class="form-control animated" cols="50" id="new-review" name="comment"
-                        placeholder="Enter your review here..." rows="5"></textarea>
 
-                    <div class="text-right">
-                        <div class="stars starrr" data-rating="0"></div>
-                        <a class="btn btn-danger btn-sm" href="#" id="close-review-box"
-                            style="display:none; margin-right: 10px;">
-                            <span class="glyphicon glyphicon-remove"></span>Cancel</a>
-                        <button class="btn btn-success btn-lg" type="submit">Save</button>
+        <div class="row mt-5">
+            <div class="col-5 searchResults">
+                <div class="row" data-imgURl="{{data.imgURL}}" data-track_name="{{data.track_name}}" data-track_artist="{{data.track_artist}}" data-track_id="{{data.track_id}}">
+                    <div class="col-3 searchresultimg">
+                        <img class="resultImage" src="{{data.imgURL}}" alt="Result Image Here" style="width:100px;height:100px;">
                     </div>
-                </form>
+                    <div class="col-9  text-white">
+                        <p>{{data.track_name}}</p>
+                        <p>{{data.track_artist}}</p>
+
+                    </div>
+                    <a id="chooseReviewItemButton" class="btn btn-primary">Review</a>
+                </div>       
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 form-group">
-                <button type="submit" class="btn btn-lg btn-warning btn-block">Post </button>
-            </div>
+
+
+        <div class="input-group">
+            <textarea class="form-control" placeholder="Enter your review here..." aria-label="With textarea"></textarea>
+            <button type="submit" class="btn btn-lg btn-success btn-block">Write Review</button>
         </div>
+    </div>
+</div>
+    
+

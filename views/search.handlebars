@@ -21,10 +21,9 @@
                                 <div class="col-4" id="#trackCard" class="card" data-imgURL="{{imgURL}}"
                                     data-track_name="{{track_name}}" data-track_artist="{{track_artist}}"
                                     data-track_id="{{track_id}}">
-                                    <button class="btn btn-outline-danger bg-dark my-2 my-sm-0 chooseToReview"
+                                    <button id="chooseReviewItemButton" class="btn btn-outline-danger bg-dark my-2 my-sm-0 chooseToReview"
                                         type="submit">Review</button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -40,3 +39,6 @@
         {{/each}}
     </div>
 </div>
+
+<script src="/assets/js/chooseReview.js"></script>
+
