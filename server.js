@@ -26,6 +26,7 @@ server.use(passport.session());
 require("./routes/htmlroutes")(server);
 require("./routes/authRoutes")(server, passport);
 
+
 db.sequelize.sync().then(() => {
     server.listen(PORT, () => {
         console.log(`Listening in port: ${PORT}`);

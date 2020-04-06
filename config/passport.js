@@ -37,6 +37,16 @@ passport.use('provider', new OAuth2Strategy({
                     }).then((createdUser) => {
                         console.log("created USer: " + createdUser);
                         return done(null, createdUser);
+                    }).catch((err) => {
+                        db.User.create({
+                            access_token: accessToken,
+                            refresh_token: refreshToken,
+                            user_name: user_name,
+                            img_url: "none"
+                        }).then((createdUser) => {
+                            console.log("created USer: " + createdUser);
+                            return done(null, createdUser);
+                        });
                     });
                 }
                 else if (dbUser) { //updates user token and img url if exists
