@@ -1,6 +1,6 @@
 body {
     background-color: #181818;
-    background-image: url("../images/sound.png");
+    background-image: url("../images/sound25op.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
@@ -15,16 +15,6 @@ body {
     position: absolute;
 }
 
-/* 
-input {
-
-    margin-left: 260px;
-    margin-top: 20px;
-} */
-
-.background-image {
-    opacity: 0.1;
-}
 
 .btn:hover {
     opacity: 1;
