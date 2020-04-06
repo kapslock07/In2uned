@@ -62,15 +62,41 @@ module.exports = function (server) {
     });
 
     server.post("/write/review", isAuthenticated, (req, res) => {
+        let data = req.body;
 
+        db.Meta.create({ //creates meta data for track they selected
+            imgURL: data.imgURL,
+            track_name: data.track_name,
+            track_artist: data.track_artist,
+            track_id: data.track_id
+        }).then((createdMeta) => {
+            let metaURL = "/write/review/" + createdMeta.id; //adds meta data id to review url
+            res.json({url: metaURL});//sends them there
+        });
     });
 
-    server.get("/write/review", isAuthenticated, (req, res) => {
-//THIS DOESNT WORK
-        res.render("writereview", {
-            imgURL: req.body.imgURL,
-            track_name: req.body.track_name,
-            track_artist: req.body.track_artist
+    server.get("/write/review/:id", isAuthenticated, (req, res) => {
+
+        let metaId = req.params.id;
+
+        db.Meta.findOne({ //get meta we created from post
+            where:{
+                id: metaId
+            }
+        }).then((meta) => {
+            
+            let data = { //build data object out of meta data
+                imgURL: meta.imgURL,
+                track_name: meta.track_name,
+                track_artist: meta.track_artist,
+                track_id: meta.track_id
+            }
+
+            meta.destroy(); //destroy meta in db
+
+            res.render("writereview", { //render write review page with data
+                data: data
+            });
         });
     });
 
@@ -90,7 +116,8 @@ module.exports = function (server) {
             builtItems.push({
                 imgURL: e.album.images[0].url,
                 track_name: e.name,
-                track_artist: e.artists[0].name
+                track_artist: e.artists[0].name,
+                track_id: e.id
             });
         });
         return builtItems;
