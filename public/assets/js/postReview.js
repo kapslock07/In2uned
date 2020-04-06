@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    let starValue = 0; //value that holds what the user chose for star rating
+
 
     //STAR CODE FROM https://codepen.io/mmoradi08/pen/yLyYrGg
     /* 1. Visualizing things on Hover - See next part for action on click */
@@ -35,7 +37,8 @@ $(document).ready(() => {
             for (i = 0; i < onStar; i++) {
                 $(stars[i]).addClass('selected');
             }
-        
+
+            starValue = onStar;
         });
 
     $("#postbtn").on("click", (event)=>{
@@ -48,10 +51,35 @@ $(document).ready(() => {
         let track_id = $("#trackCard").attr("data-track_id");
         let reviewText = $("#reviewText").val().trim();
 
+        if(reviewText.replace( /\s/g, '').length == 0){//check if the user entered any text (exlcuding spaces)
+            makeAlert("Please Input Text to your review");
+        }
+        else if(starValue === 0){//Check if the user chose a star value
+            makeAlert("Please Select a Star Value");
+        }
+        else{
+
+
+        }
 
     });
 
+    function makeAlert(message){ //This function creates an alert message on the page
+
+        let newAlert = $("<div>");
+        $(newAlert).attr("id", "ratingAlert");
+        $(newAlert).attr("class", "alert alert-danger text-center");
+        $(newAlert).attr("role", "alert");
+        $(newAlert).append(message);
+    
+        $("#postButtonParent").prepend($(newAlert));
+        $(newAlert).fadeOut(4000);//fades alert out in 4 seconds
+    }
 });
+
+
+
+
 
   
   
