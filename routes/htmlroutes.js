@@ -20,6 +20,10 @@ module.exports = function (server) {
         });
     });
 
+    server.post("/myreviews", isAuthenticated, (req, res) => { 
+
+    });
+
     server.get("/myreviews", isAuthenticated, (req, res) => { //if there is a user it gets there id and retrieves there reviews
         if (!req.user) {
             res.json({});
@@ -99,9 +103,7 @@ module.exports = function (server) {
         });
     });
 
-    server.post("/myreviews", isAuthenticated, (req, res) => { 
 
-    });
 
     refreshAccessToken = (dbUser, res) => {
 

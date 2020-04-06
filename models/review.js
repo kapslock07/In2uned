@@ -2,11 +2,19 @@
 module.exports = function(sequelize, DataTypes){
     let Review = sequelize.define("Review", {
 
-        review_name: {
+        imgURL: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        api_id: {
+        track_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        track_artist: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        track_id: {
             type: DataTypes.STRING,
             allowNull: true
         },

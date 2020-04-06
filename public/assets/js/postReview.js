@@ -57,7 +57,7 @@ $(document).ready(() => {
         else if(starValue === 0){//Check if the user chose a star value
             makeAlert("Please Select a Star Value");
         }
-        else{
+        else{ //If all checks out - Make the Post
 
 
         }
