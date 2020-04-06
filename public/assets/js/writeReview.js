@@ -6,7 +6,3 @@ $(document).ready(() => {
         window.location.assign("/search");
     });
 });
-
-$(document).ready(function () {
-    $('#rateMe1').mdbRate();
-});
