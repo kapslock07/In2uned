@@ -1,11 +1,11 @@
-body {
+/* body {
     background-color: #181818;
     background-image: url("../images/sound50op.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
     background-size: 100% 30%;
-}
+} */
 
 #Login {
     margin: white 5px;
@@ -13,7 +13,6 @@ body {
     color: red;
     position: absolute;
 }
-
 
 #logincard {
     height: 370px;

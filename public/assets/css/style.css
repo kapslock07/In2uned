@@ -9,6 +9,7 @@ body {
 
 #new-review {
     margin-bottom: 10px;
+    color: white;
 }
 
 #Login {
@@ -21,7 +22,6 @@ body {
     color: red;
     font-size: 24px;
 }
-
 
 .btn:hover {
     opacity: 1;
