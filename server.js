@@ -17,17 +17,7 @@ server.engine("handlebars", exphbs({ defaultLayout: "main" }));
 server.set("view engine", "handlebars");
 
 
-server.use (
-    session ({
-       secret: "magic kat",
-       saveUninitialized: false,
-       resave: true,
-       rolling: true,
-       cookie: {
-          expires: 20 * 1000
-       }
-    })
- );
+server.use (session ({ secret: "magic cat", resave: true, saveUninitialized: true }));
 server.use(passport.initialize());
 server.use(passport.session());
 

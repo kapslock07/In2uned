@@ -1,10 +1,8 @@
 $(document).ready(() => {
-    $("#chooseReviewItemButton").on("click", (event) => {
+    $(".chooseToReview").on("click", (event) => {
          event.preventDefault();
 
-
-         let card = $("#chooseReviewItemButton").parent();
-
+         let card = $(event.target).parent();
          let imgURL = $(card).attr("data-imgURL");
          let track_name = $(card).attr("data-track_name");
          let track_artist = $(card).attr("data-track_artist");
@@ -19,7 +17,6 @@ $(document).ready(() => {
                 track_id: track_id
             }
         }).then((res) => {
-            console.log(res);
             window.location.assign(res.url);
         }); 
     });

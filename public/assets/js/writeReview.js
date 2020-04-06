@@ -9,7 +9,9 @@ $(document).ready(() => {
 
 var ratingsField = $('#ratings-hidden');
 
+
 $('.starrr').on('starrr:change', function (e, value) {
     ratingsField.val(value);
 });
+
 
