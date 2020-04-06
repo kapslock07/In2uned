@@ -7,10 +7,10 @@ body {
     background-size: 100% 30%;
 }
 
-input {
+/* input {
     margin-left: 260px;
     margin-top: 20px;
-}
+} */
 
 background-image {
     opacity: 0.1;
@@ -100,7 +100,7 @@ h3 {
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 120px
+    height: 190px
 }
 
 .resultImage {
