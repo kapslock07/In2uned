@@ -75,7 +75,6 @@ img {
 h4 {
     text-align: center;
     border-bottom: 1px solid red;
-
     font-family: 'Monoton', cursive;
 }
 
@@ -113,6 +112,16 @@ h3 {
     overflow: hidden;
     text-overflow: ellipsis;
     height: 200px
+}
+
+.writeReviewSelection {
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 30px;
+    background: rgba(204, 204, 204, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 200px 
 }
 
 .resultImage {

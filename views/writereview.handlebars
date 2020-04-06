@@ -3,14 +3,48 @@
     </div>
     <div class="col-md-6 col-md-offset-3 form-container">
         <h2 class="explainer-text">Review</h2>
+        <div class="row mt-4">
+            {{#with data}}
+            <div class="col-12 writeReviewSelection">
+                <div class="row">
+                    <div class="col-3 searchresultimg">
+                        <img class="resultImage" src="{{imgURL}}" alt="Result Image Here"
+                            style="width:110px;height:110px;">
+                    </div>
+                    <div class="col-9  text-white">
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="trackName">{{track_name}}</p>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p id="trackArtist">{{track_artist}}</p>
+                                    </div>
+
+                                    <div class="col-4" id="#trackCard" class="card" data-imgURL="{{imgURL}}"
+                                        data-track_name="{{track_name}}" data-track_artist="{{track_artist}}"
+                                        data-track_id="{{track_id}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-l2 ml-2 spotifyplayer">
+                                <iframe src="https://open.spotify.com/embed/track/{{track_id}}" width="340" height="75"
+                                    frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </div>
         <div class="row" id="post-review-box">
             <div class="col-md-12">
                 <form accept-charset="UTF-8" action="" method="post">
                     <textarea class="form-control animated" cols="50" id="new-review" name="comment"
                         placeholder="Enter your review here..." rows="5"></textarea>
-
-                    <h5>Rate Song from 1-5</h5>
-                    <div class="btn-toolbar mb-2" role="toolbar" aria-label="Toolbar with button groups">
+                    <h5 class="ratesongtext">Rate Song from 1-5</h5>
+                    <div class="btn-toolbar mb-2 ratingoptions" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group mr-2" role="group" aria-label="First group">
                             <button type="button" class="btn btn-secondary">1</button>
                             <button type="button" class="btn btn-secondary">2</button>
