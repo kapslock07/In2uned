@@ -3,7 +3,7 @@ $(document).ready(() => {
          event.preventDefault();
          
 
-        
+        window.location.assign("/search");
     });
 });
 
