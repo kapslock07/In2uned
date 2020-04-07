@@ -10,8 +10,9 @@ body {
 #Login {
     margin: white 5px;
     border: white 5px;
+    position: static;
+    font-family: 'Monoton', cursive;
     color: red;
-    position: absolute;
 }
 
 #logincard {
@@ -24,8 +25,6 @@ body {
 
 .brandLogo {
     font-family: 'Monoton', cursive;
-    font-size: 42px;
+    font-size: 32px;
 }
-
-
 
