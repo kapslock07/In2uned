@@ -22,12 +22,21 @@
                 <div class="row">
                     {{#each reviews}}
                     <div class="reviews col-sm-12 col-md-5">
-
-                        <h3>{{review_name}}</h3>
-                        <h5>Rating: {{rating}}/5</h5>
-                        <p>User: {{username}}</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="trackName">Song: {{track_name}}</p>
+                                <p id="trackArtist">Artist: {{track_artist}}</p>
+                            </div>
+                        </div>
+                        <p>User: {{user_name}}</p>
+                        <p>Rating: {{rating}}/5</p>
+                        <div class="col-9 mb-3">
+                            <div class=" col-l2 ml-2 spotifyplayer">
+                                <iframe src="https://open.spotify.com/embed/track/{{track_id}}" width="400" height="80"
+                                    frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                        </div>
                         <p>{{review_text}}</p>
-
                     </div>
                     {{/each}}
                 </div>

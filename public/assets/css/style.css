@@ -74,20 +74,19 @@ img {
 
 h4 {
     text-align: center;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid rgb(246, 70, 76);
     font-family: 'Monoton', cursive;
 }
 
 h3 {
-    color: red;
+    color: rgb(246, 70, 76);
     font-size: 24px;
     margin-top: 20px;
 }
 
 .reviews {
-    padding: 5px;
+    padding: 10px;
     margin: auto;
-    height: 165px;
     margin-bottom: 30px;
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
@@ -129,7 +128,7 @@ h3 {
 #trackName {
     font-family: 'Paytone One', sans-serif;
     font-style: 'regular';
-    font-size: 24px;
+    font-size: 26px;
     height: 36px;
     white-space: nowrap;
     overflow: hidden;
@@ -166,10 +165,13 @@ h3 {
     margin: auto;
 }
 
-
 h5 {
 color:white;
 font-family: 'Mada', sans-serif;
+}
+
+p {
+    font-family: 'Mada', sans-serif;
 }
 
 /* below is star styling from https://codepen.io/mmoradi08/pen/yLyYrGg */
