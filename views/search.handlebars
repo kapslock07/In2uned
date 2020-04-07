@@ -6,26 +6,26 @@
         {{#each track}}
         <div class="col-lg-5 col-md-12 searchResults">
             <div class="row">
+                <div class="col-12 text-white ml-2">
+                    <p id="trackName">{{track_name}}</p>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-3 searchresultimg">
                     <img class="resultImage" src="{{imgURL}}" alt="Result Image Here" style="width:110px;height:110px;">
                 </div>
-                <div class="col-9  text-white">
+                <div class="col-9 text-white">
                     <div class="row">
-                        <div class="col-12">
-                            <p id="trackName">{{track_name}}</p>
-                            <div class="row">
-                                <div class="col-8">
-                                    <p id="trackArtist">{{track_artist}}</p>
-                                </div>
+                        <div class="col-8">
+                            <p id="trackArtist">{{track_artist}}</p>
+                        </div>
 
-                                <div class="col-4" id="#trackCard" class="card" data-imgURL="{{imgURL}}"
-                                    data-track_name="{{track_name}}" data-track_artist="{{track_artist}}"
-                                    data-track_id="{{track_id}}">
-                                    <button id="chooseReviewItemButton"
-                                        class="btn btn-outline-danger bg-dark my-2 my-sm-0 chooseToReview"
-                                        type="submit">Review</button>
-                                </div>
-                            </div>
+                        <div class="col-4" id="#trackCard" class="card" data-imgURL="{{imgURL}}"
+                            data-track_name="{{track_name}}" data-track_artist="{{track_artist}}"
+                            data-track_id="{{track_id}}">
+                            <button id="chooseReviewItemButton"
+                                class="btn btn-outline-danger bg-dark my-2 my-sm-0 chooseToReview"
+                                type="submit">Review</button>
                         </div>
                     </div>
                     <div class="row mt-2">
