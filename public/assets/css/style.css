@@ -47,12 +47,12 @@ img {
 
 .navbar-brand {
     font-family: 'Monoton', cursive;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 .brandLogo {
     font-family: 'Monoton', cursive;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 .collapse {
@@ -74,32 +74,25 @@ img {
 
 h4 {
     text-align: center;
-    border-bottom: 1px solid red;
-
+    border-bottom: 1px solid rgb(246, 70, 76);
     font-family: 'Monoton', cursive;
 }
 
 h3 {
-    color: red;
+    color: rgb(246, 70, 76);
     font-size: 24px;
     margin-top: 20px;
 }
 
 .reviews {
-    padding: 5px;
+    padding: 10px;
     margin: auto;
-    height: 165px;
     margin-bottom: 30px;
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.stars {
-    margin: 20px 0;
-    font-size: 24px;
-    color: #d17581;
-}
 
 #reviewSearchLabel {
     color: white
@@ -112,19 +105,30 @@ h3 {
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 200px
+    height: 200px;
+    width: 480px
+}
+
+.writeReviewSelection {
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 30px;
+    background: rgba(204, 204, 204, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 200px 
 }
 
 .resultImage {
     position: relative;
-    top: 50%;
+    top: 40%;
     transform: translateY(-45%);
 }
 
 #trackName {
     font-family: 'Paytone One', sans-serif;
     font-style: 'regular';
-    font-size: 24px;
+    font-size: 26px;
     height: 36px;
     white-space: nowrap;
     overflow: hidden;
@@ -161,9 +165,44 @@ h3 {
     margin: auto;
 }
 
-
 h5 {
 color:white;
 font-family: 'Mada', sans-serif;
+}
+
+p {
+    font-family: 'Mada', sans-serif;
+}
+
+/* below is star styling from https://codepen.io/mmoradi08/pen/yLyYrGg */
+.text-center {text-align:center;}
+
+
+/* Rating Star Widgets Style */
+.rating-stars ul {
+  list-style-type:none;
+  padding:0;
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.rating-stars ul > li.star {
+  display:inline-block;
+  
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+  font-size:2.5em; /* Change the size of the stars */
+  color:#ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+  color: rgb(246, 70, 76, 0.5);
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+  color: rgb(246, 70, 76);
 }
 

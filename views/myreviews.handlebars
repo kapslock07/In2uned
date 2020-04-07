@@ -1,6 +1,6 @@
 <div class="row mt-5">
     <div class="col-12">
-        <h2 class="explainer-text text-light mb-4">Review music. Share with your freinds.</h2>
+        <h2 class="explainer-text text-light mb-4">Review music. Share with your friends.</h2>
         <div class="row">
             <div class="col-12">
                 <button id="writeReview" type="button" class="btn btn-danger btn-lg btn-lg mb-4 ">Write A
@@ -17,17 +17,33 @@
             <div class="card-body feed-card">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="card-title">My Reviews</h4>
+                        <h4 class="card-title text-danger">My Reviews</h4>
                     </div>
                 </div>
                 <div class="row">
                     {{#each reviews}}
-                    <div class="reviews col-5">
+                    <div class="reviews col-sm-12 col-md-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="ml-2" id="trackName">Song: {{track_name}}</p>
+                            </div>
+                            <div class="col-3 searchresultimg">
+                                <img class="resultImage" src="{{imgURL}}" alt="Result Image Here"
+                                    style="width:100px;height:100px;">
+                            </div>
+                            <div class="col-9">
+                                <p id="trackArtist">Artist: {{track_artist}}</p>
+                                <p>Rating: {{rating}}/5</p>
+                            </div>
+                        </div>
 
-                        <h3>Reviewing: {{review_name}}</h3>
-                        <h5>Rating: {{rating}}/5</h5>
+                        <div class="col-9 mt-3 mb-3">
+                            <div class=" col-l2spotifyplayer">
+                                <iframe src="https://open.spotify.com/embed/track/{{track_id}}" width="400" height="75"
+                                    frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                        </div>
                         <p>{{review_text}}</p>
-
                     </div>
                     {{/each}}
                 </div>
