@@ -10,13 +10,31 @@ module.exports = function (server) {
     });
 
     server.get("/feed", isAuthenticated, (req, res) => {
-        console.log(req.session.passport.user);
         db.Review.findAll({
             include: [db.User]
         }).then(data => {
             res.render("feed", {
                 reviews: buildObjectFromDB(data)
             });
+        });
+    });
+
+    server.post("/myreviews", isAuthenticated, (req, res) => { 
+
+        let data = req.body;
+
+        console.log(data);
+
+        db.Review.create({
+            imgURL: data.imgURL,
+            track_name: data.track_name,
+            track_artist: data.track_artist,
+            track_id: data.track_id,
+            rating: data.rating,
+            review_text: data.review_text,
+            UserId: req.user.id
+        }).then((newReview) => {
+            res.json({ saved: true });
         });
     });
 
@@ -30,10 +48,11 @@ module.exports = function (server) {
             db.Review.findAll({
                 where: {
                     UserId: id
-                }
-            }).then(reviews => {
+                },
+                include: [db.User]
+            }).then(data => {
                 res.render("myreviews", {
-                    reviews: reviews
+                    reviews: buildObjectFromDB(data)
                 });
             });
         }
@@ -99,9 +118,7 @@ module.exports = function (server) {
         });
     });
 
-    server.post("/myreviews", isAuthenticated, (req, res) => { 
 
-    });
 
     refreshAccessToken = (dbUser, res) => {
 
@@ -128,12 +145,16 @@ module.exports = function (server) {
             let data = e.dataValues;
 
             newObj.push({
-                review_name: data.review_name,
+                imgURL: data.imgURL,
+                track_name: data.track_name,
+                track_artist: data.track_artist,
+                track_id: data.track_id,
                 rating: data.rating,
                 user_name: data.User.user_name,
                 review_text: data.review_text
             });
         });
+        console.log(newObj);
         return newObj;
     }
     server.get("/reviewchoice", (req, res) => {

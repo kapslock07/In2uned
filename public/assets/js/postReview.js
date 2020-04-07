@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    let starValue = 0; //value that holds what the user chose for star rating
+
 
     //STAR CODE FROM https://codepen.io/mmoradi08/pen/yLyYrGg
     /* 1. Visualizing things on Hover - See next part for action on click */
@@ -35,7 +37,8 @@ $(document).ready(() => {
             for (i = 0; i < onStar; i++) {
                 $(stars[i]).addClass('selected');
             }
-        
+
+            starValue = onStar;
         });
 
     $("#postbtn").on("click", (event)=>{
@@ -46,12 +49,52 @@ $(document).ready(() => {
         let track_name = $("#trackCard").attr("data-track_name");
         let track_artist = $("#trackCard").attr("data-track_artist");
         let track_id = $("#trackCard").attr("data-track_id");
-        let reviewText = $("#reviewText").val().trim();
+        let review_text = $("#reviewText").val().trim();
 
-
+        if(review_text.replace( /\s/g, '').length == 0){//check if the user entered any text (exlcuding spaces)
+            makeAlert("Please Input Text to your review");
+        }
+        else if(starValue === 0){//Check if the user chose a star value
+            makeAlert("Please Select a Star Value");
+        }
+        else{ //If all checks out - Make the Post
+          //  console.log({imgURL, track_name, track_artist, track_id, review_text});
+            
+            $.post({
+                url: "/myreviews",
+                data: {
+                    imgURL: imgURL,
+                    track_name: track_name,
+                    track_artist: track_artist,
+                    track_id: track_id,
+                    rating: starValue,
+                    review_text: review_text
+                }
+            }).then((res) => {
+                if(res.saved){
+                    window.location.assign("/myreviews");
+                }
+                
+            }); 
+        }
     });
 
+    function makeAlert(message){ //This function creates an alert message on the page
+
+        let newAlert = $("<div>");
+        $(newAlert).attr("id", "ratingAlert");
+        $(newAlert).attr("class", "alert alert-danger text-center");
+        $(newAlert).attr("role", "alert");
+        $(newAlert).append(message);
+    
+        $("#postButtonParent").prepend($(newAlert));
+        $(newAlert).fadeOut(4000);//fades alert out in 4 seconds
+    }
 });
+
+
+
+
 
   
   
