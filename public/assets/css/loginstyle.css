@@ -7,6 +7,30 @@ body {
     background-size: 100% 30%;
 }
 
+#loginBanner {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    margin-bottom: 15px;
+    color: #dc3545;
+    font-size: 96px;
+}
+
+#logoBanner {
+    font-family: 'Monoton', cursive;
+    color: #dc3545;
+    width:max-content;
+}
+
+p {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: max-content;
+}
+
+
 #Login {
     border: white 5px;
     position: static;
@@ -36,7 +60,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 10px;
 }
 
