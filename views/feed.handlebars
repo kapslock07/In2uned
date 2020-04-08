@@ -33,10 +33,30 @@
                             <div class="col-9">
                                 <p id="trackArtist">Artist: {{track_artist}}</p>
                                 <p>User: {{user_name}}</p>
-                                <p>Rating: {{rating}}/5</p>
+                                <section class='rating-widget'>
+                                    <!-- Rating Stars Box -->
+                                    <div class='rating-stars text-center'>
+                                        <ul id='stars' class="starHandle" data-starValue="{{rating}}">
+                                            <li class='star' title='Poor' data-value='1'>
+                                                <i class='fa fa-star fa-fw'></i>
+                                            </li>
+                                            <li class='star' title='Fair' data-value='2'>
+                                                <i class='fa fa-star fa-fw'></i>
+                                            </li>
+                                            <li class='star' title='Good' data-value='3'>
+                                                <i class='fa fa-star fa-fw'></i>
+                                            </li>
+                                            <li class='star' title='Excellent' data-value='4'>
+                                                <i class='fa fa-star fa-fw'></i>
+                                            </li>
+                                            <li class='star' title='WOW!!!' data-value='5'>
+                                                <i class='fa fa-star fa-fw'></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
                             </div>
                         </div>
-
                         <div class="col-9 mt-3 mb-3">
                             <div class=" col-l2spotifyplayer">
                                 <iframe src="https://open.spotify.com/embed/track/{{track_id}}" width="400" height="75"
@@ -53,3 +73,4 @@
 </div>
 
 <script src="/assets/js/writeReview.js"></script>
+<script src="/assets/js/setFixedStar.js"></script>
