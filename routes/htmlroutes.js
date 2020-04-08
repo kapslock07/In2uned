@@ -195,6 +195,7 @@ module.exports = function (server) {
                 review_text: data.review_text
             });
         });
+        console.log(newObj);
         return newObj;
     }
 
