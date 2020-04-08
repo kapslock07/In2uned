@@ -1,3 +1,8 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
 body {
     background-color: #181818;
     background-image: url("../images/sound25op.png");
@@ -12,11 +17,6 @@ body {
     color: white;
 }
 
-#Login {
-    margin: white 5px;
-    border: white 5px;
-    color: pink;
-}
 
 .star-rating i {
     color: red;
@@ -146,32 +146,10 @@ word-wrap: break-word
     margin: auto;
 }
 
-.carosuelHolder {
-    position: absolute;
-    z-index: -1;
-    top: -21px;
-    left: -27px;
-}
-
-
-
 .carCustom{
-    margin-left: auto;
-    
-    display: block;
+    border: 5px outset rgba(0, 0, 0, 0.5);
 }
 
-.PerMargin-30 {
-    margin-top: 30% !important;
-}
-
-#logincard {
-    height: 370px;
-    margin-bottom: auto;
-    width: 400px;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    align-items: center;
-}
 
 .spotifyplayer {
     display: block;
