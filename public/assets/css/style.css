@@ -140,9 +140,26 @@ h3 {
     margin: auto;
 }
 
+.carosuelHolder {
+    position: absolute;
+    z-index: -1;
+    top: -21px;
+    left: -27px;
+}
+
+
+.carCustom{
+    margin-left: auto;
+    
+    display: block;
+}
+
+.PerMargin-30 {
+    margin-top: 30% !important;
+}
+
 #logincard {
     height: 370px;
-    margin-top: auto;
     margin-bottom: auto;
     width: 400px;
     background-color: rgba(0, 0, 0, 0.5) !important;
