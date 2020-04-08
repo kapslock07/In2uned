@@ -2,6 +2,7 @@ require("dotenv").config();
 const db = require("../models");
 let isAuthenticated = require("../config/middleware/isAuthenticated");
 let axios = require("axios");
+const qs = require('qs');
 
 module.exports = function (server) {
 
@@ -22,8 +23,6 @@ module.exports = function (server) {
     server.post("/myreviews", isAuthenticated, (req, res) => { 
 
         let data = req.body;
-
-        console.log(data);
 
         db.Review.create({
             imgURL: data.imgURL,
@@ -64,6 +63,7 @@ module.exports = function (server) {
 
     server.get("/api/search/:query", isAuthenticated, (req, res) => {
         let query = req.params.query;
+        
 
         let queryURL = `https://api.spotify.com/v1/search?q=${query}&type=track&market=US&limit=10`;
 
@@ -75,9 +75,38 @@ module.exports = function (server) {
             });
         })
         .catch(error => {
-            console.log('error' + error);
+            console.log("Refreshing token for" + req.user.id);
+            refreshAccessToken(req.user, res, query); //if the api fails to validate client, refresh token
         });
     });
+
+    refreshAccessToken = (user, res, query) => {
+
+        let refresh_token = user.refresh_token; //get there old token
+
+        axios.post("https://accounts.spotify.com/api/token", 
+            { 
+                headers: { 'content-type': 'application/x-www-form-urlencoded;charset=utf-8' },
+                body: qs.stringify({
+                    grant_type: "refresh_token",
+                    refresh_token: refresh_token,
+                    client_id: process.env.API_CLIENT_ID,
+                    client_secret: process.env.API_CLIENT_SECRET
+                })
+            }).then(axRes => {
+                let newAuthToken = axRes.data.access_token;
+
+                db.User.update({
+                    where: {
+                        id: user.id
+                    },
+                    access_token: newAuthToken
+                }).then(() => {
+                    console.log("refresed token for user: " + user.id);
+                    res.redirect("/api/search/"+query);
+                });
+            });
+    }
 
     server.post("/write/review", isAuthenticated, (req, res) => {
         let data = req.body;
@@ -118,12 +147,6 @@ module.exports = function (server) {
         });
     });
 
-
-
-    refreshAccessToken = (dbUser, res) => {
-
-    }
-
     buildTrackObject = (items) => {
 
         let builtItems = [];
@@ -157,15 +180,5 @@ module.exports = function (server) {
         console.log(newObj);
         return newObj;
     }
-    server.get("/reviewchoice", (req, res) => {
-        let track = {
 
-            logout: "Where the hell are you going?"
-        };
-        res.render("reviewchoice");
-    });
-
-    server.get("/writereview", (req, res) => {
-        res.render("writereview");
-    });
 }
