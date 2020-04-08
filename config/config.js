@@ -3,7 +3,7 @@ module.exports = {
   "development": {
     "username": process.env.DB_USER,
     "password": process.env.DB_PASS,
-    "database": "in2uned_db_local",
+    "database": process.env.LOCAL_DB_NAME,
     "host": "127.0.0.1",
     "dialect": "mysql",
   },

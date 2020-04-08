@@ -7,7 +7,7 @@ let db = require("../models");
 passport.use('provider', new OAuth2Strategy({
     authorizationURL: 'https://accounts.spotify.com/authorize',
     tokenURL: 'https://accounts.spotify.com/api/token',
-    clientID:   process.env.API_CLIENT_ID,
+    clientID: process.env.API_CLIENT_ID,
     clientSecret: process.env.API_CLIENT_SECRET,
     callbackURL: "/auth/spotify/callback"
 },
