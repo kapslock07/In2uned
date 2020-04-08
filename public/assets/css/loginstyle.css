@@ -11,8 +11,9 @@ body {
     margin: white 5px;
     border: white 5px;
     position: static;
-    font-family: 'Monoton', cursive;
-    color: red;
+    font-family: 'Mada', sans-serif;
+    font-size: 24px;
+    color: rgb(246, 70, 76);
 }
 
 #logincard {

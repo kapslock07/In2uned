@@ -77,9 +77,15 @@ h3 {
     padding: 10px;
     margin: auto;
     margin-bottom: 30px;
+    margin-top: 30px;
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 500px
+}
+
+.reviewText {
+word-wrap: break-word
 }
 
 #reviewSearchLabel {
@@ -93,10 +99,10 @@ h3 {
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 200px;
+    height: 275px;
     width: 480px;
-
 }
+
 
 .writeReviewSelection {
     padding: 5px;
@@ -110,8 +116,8 @@ h3 {
 
 .resultImage {
     position: relative;
-    top: 40%;
-    transform: translateY(-45%);
+    /* top: 40%;
+    transform: translateY(-45%); */
 }
 
 #trackName {
@@ -146,6 +152,7 @@ h3 {
     top: -21px;
     left: -27px;
 }
+
 
 
 .carCustom{
@@ -219,3 +226,22 @@ p {
 .rating-stars ul>li.star.selected>i.fa {
     color: rgb(246, 70, 76);
 }
+
+iframe {
+    width: 400px;   
+    height: 75px;
+ }
+
+@media only screen and (max-width: 500px) {
+    iframe {
+width: 275px;    }
+
+.reviews {
+    width: 325px
+}
+
+.searchResults {
+    width: 325px
+
+}
+  }
