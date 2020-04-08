@@ -3,6 +3,8 @@ const db = require("../models");
 let isAuthenticated = require("../config/middleware/isAuthenticated");
 let axios = require("axios");
 const qs = require('qs');
+const sequelize = require("sequelize");
+
 
 module.exports = function (server) {
 
@@ -55,6 +57,21 @@ module.exports = function (server) {
                 });
             });
         }
+    });
+
+    server.get("/db/search/:query", isAuthenticated, (req, res) => {
+        let query = req.params.query;
+
+        db.Review.findAll({
+            where: {
+                track_name: sequelize.where(sequelize.fn('LOWER', sequelize.col('track_name')), 'LIKE', '%' + query + '%')
+            },
+            include: [db.User]
+        }).then((results) => {
+            res.render("reviewSearch", {
+                reviews: buildObjectFromDB(results)
+            })
+        });
     });
 
     server.get("/search", isAuthenticated, (req, res) => {
