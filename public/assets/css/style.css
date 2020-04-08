@@ -7,7 +7,6 @@ body {
     background-size: 100% 30%;
 }
 
-
 #new-review {
     margin-bottom: 10px;
     color: white;
@@ -29,11 +28,6 @@ body {
     color: white;
 }
 
-img {
-    position: absolute;
-    float: left;
-}
-
 .btn {
     font-family: 'Nobile', sans-serif;
 }
@@ -41,9 +35,8 @@ img {
 .explainer-text {
     font-family: 'Mada', sans-serif;
     text-align: center;
-    color:white
+    color: white
 }
-
 
 .navbar-brand {
     font-family: 'Monoton', cursive;
@@ -59,19 +52,13 @@ img {
     font-family: 'Mada', sans-serif;
 }
 
-
 .card {
     margin: auto;
-    font-family: 'Mada', sans-serif; 
-
+    font-family: 'Mada', sans-serif;
 }
 
 .card-text {
     font-size: 24px;
-}
-
-.trackDetails {
-    width: 75%;
 }
 
 h4 {
@@ -94,7 +81,6 @@ h3 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 
 #reviewSearchLabel {
     color: white
@@ -119,7 +105,7 @@ h3 {
     background: rgba(204, 204, 204, 0.3);
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 200px 
+    height: 200px
 }
 
 .resultImage {
@@ -169,8 +155,8 @@ h3 {
 }
 
 h5 {
-color:white;
-font-family: 'Mada', sans-serif;
+    color: white;
+    font-family: 'Mada', sans-serif;
 }
 
 p {
@@ -178,34 +164,41 @@ p {
 }
 
 /* below is star styling from https://codepen.io/mmoradi08/pen/yLyYrGg */
-.text-center {text-align:center;}
 
+.text-center {
+    text-align: center;
+}
 
 /* Rating Star Widgets Style */
+
 .rating-stars ul {
-  list-style-type:none;
-  padding:0;
-  -moz-user-select:none;
-  -webkit-user-select:none;
+    list-style-type: none;
+    padding: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
-.rating-stars ul > li.star {
-  display:inline-block;
-  
+
+.rating-stars ul>li.star {
+    display: inline-block;
 }
 
 /* Idle State of the stars */
-.rating-stars ul > li.star > i.fa {
-  font-size:2.5em; /* Change the size of the stars */
-  color:#ccc; /* Color on idle state */
+
+.rating-stars ul>li.star>i.fa {
+    font-size: 2.5em;
+    /* Change the size of the stars */
+    color: #ccc;
+    /* Color on idle state */
 }
 
 /* Hover state of the stars */
-.rating-stars ul > li.star.hover > i.fa {
-  color: rgb(246, 70, 76, 0.5);
+
+.rating-stars ul>li.star.hover>i.fa {
+    color: rgb(246, 70, 76, 0.5);
 }
 
 /* Selected state of the stars */
-.rating-stars ul > li.star.selected > i.fa {
-  color: rgb(246, 70, 76);
-}
 
+.rating-stars ul>li.star.selected>i.fa {
+    color: rgb(246, 70, 76);
+}
