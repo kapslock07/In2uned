@@ -174,6 +174,7 @@ module.exports = function (server) {
                 track_id: data.track_id,
                 rating: data.rating,
                 user_name: data.User.user_name,
+                user_img: data.User.img_url,
                 review_text: data.review_text
             });
         });
