@@ -70,7 +70,9 @@ img {
     font-size: 24px;
 }
 
-
+.trackDetails {
+    width: 75%;
+}
 
 h4 {
     text-align: center;
@@ -106,7 +108,8 @@ h3 {
     overflow: hidden;
     text-overflow: ellipsis;
     height: 200px;
-    width: 480px
+    width: 480px;
+
 }
 
 .writeReviewSelection {
@@ -147,7 +150,7 @@ h3 {
 
 #writeReview {
     display: block;
-    width: 500px;
+    width: 50%;
     margin: auto;
 }
 
@@ -162,7 +165,7 @@ h3 {
 
 .spotifyplayer {
     display: block;
-    margin: auto;
+    /* margin: auto; */
 }
 
 h5 {
