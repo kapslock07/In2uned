@@ -70,7 +70,8 @@ module.exports = function (server) {
             where: {
                 track_name: sequelize.where(sequelize.fn('LOWER', sequelize.col('track_name')), 'LIKE', '%' + query + '%')
             },
-            include: [db.User]
+            include: [db.User],
+            logging: false
         }).then((results) => {
             res.render("reviewSearch", {
                 reviews: buildObjectFromDB(results)
