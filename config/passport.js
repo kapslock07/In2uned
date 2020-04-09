@@ -35,7 +35,6 @@ passport.use('provider', new OAuth2Strategy({
                         user_name: user_name,
                         img_url: img_url
                     }).then((createdUser) => {
-                        console.log("created USer: " + createdUser);
                         return done(null, createdUser);
                     }).catch((err) => {
                         db.User.create({
@@ -44,7 +43,6 @@ passport.use('provider', new OAuth2Strategy({
                             user_name: user_name,
                             img_url: "none"
                         }).then((createdUser) => {
-                            console.log("created USer: " + createdUser);
                             return done(null, createdUser);
                         });
                     });
@@ -53,7 +51,7 @@ passport.use('provider', new OAuth2Strategy({
                     dbUser.update(
                         {
                             access_token: accessToken,
-                            refreshToken: refreshToken
+                            refreshToken: refreshToken,
                         },
                         {
                             where: {
@@ -61,7 +59,6 @@ passport.use('provider', new OAuth2Strategy({
                             }
                         }
                     ).then((updatedUser) => {
-                        console.log("Updated USer: " + updatedUser);
                         return done(null, updatedUser);
                     });
                 }
