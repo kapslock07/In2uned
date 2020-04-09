@@ -20,7 +20,6 @@ passport.use('provider', new OAuth2Strategy({
         }).then(axRes => {
             let user_name = axRes.data.display_name;
             let img_url = axRes.data.images[0].url;
-            console.log(axRes.data);
 
             db.User.findOne({
                 where: {
