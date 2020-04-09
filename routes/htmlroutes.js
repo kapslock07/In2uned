@@ -12,6 +12,10 @@ module.exports = function (server) {
         res.render("login", { layout: "loginLayout.handlebars" });
     });
 
+    server.get("/about", (req, res) => {
+        res.render("aboutus");
+    });
+
     server.get("/feed", isAuthenticated, (req, res) => {
         db.Review.findAll({
             include: [db.User]
@@ -22,7 +26,7 @@ module.exports = function (server) {
         });
     });
 
-    server.post("/myreviews", isAuthenticated, (req, res) => { 
+    server.post("/myreviews", isAuthenticated, (req, res) => {
 
         let data = req.body;
 
@@ -80,7 +84,7 @@ module.exports = function (server) {
 
     server.get("/api/search/:query", isAuthenticated, (req, res) => {
         let query = req.params.query;
-        
+
 
         let queryURL = `https://api.spotify.com/v1/search?q=${query}&type=track&market=US&limit=10`;
 
@@ -91,18 +95,18 @@ module.exports = function (server) {
                 track: buildTrackObject(response.data.tracks.items)
             });
         })
-        .catch(error => {
-            console.log("Refreshing token for" + req.user.id);
-            refreshAccessToken(req.user, res, query); //if the api fails to validate client, refresh token
-        });
+            .catch(error => {
+                console.log("Refreshing token for" + req.user.id);
+                refreshAccessToken(req.user, res, query); //if the api fails to validate client, refresh token
+            });
     });
 
     refreshAccessToken = (user, res, query) => {
 
         let refresh_token = user.refresh_token; //get there old token
 
-        axios.post("https://accounts.spotify.com/api/token", 
-            { 
+        axios.post("https://accounts.spotify.com/api/token",
+            {
                 headers: { 'content-type': 'application/x-www-form-urlencoded;charset=utf-8' },
                 body: qs.stringify({
                     grant_type: "refresh_token",
@@ -120,7 +124,7 @@ module.exports = function (server) {
                     access_token: newAuthToken
                 }).then(() => {
                     console.log("refresed token for user: " + user.id);
-                    res.redirect("/api/search/"+query);
+                    res.redirect("/api/search/" + query);
                 });
             });
     }
@@ -135,7 +139,7 @@ module.exports = function (server) {
             track_id: data.track_id
         }).then((createdMeta) => {
             let metaURL = "/write/review/" + createdMeta.id; //adds meta data id to review url
-            res.json({url: metaURL});//sends them there
+            res.json({ url: metaURL });//sends them there
         });
     });
 
@@ -144,11 +148,11 @@ module.exports = function (server) {
         let metaId = req.params.id;
 
         db.Meta.findOne({ //get meta we created from post
-            where:{
+            where: {
                 id: metaId
             }
         }).then((meta) => {
-            
+
             let data = { //build data object out of meta data
                 imgURL: meta.imgURL,
                 track_name: meta.track_name,
