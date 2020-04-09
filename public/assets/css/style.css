@@ -43,6 +43,7 @@ body {
     font-size: 42px;
 }
 
+
 .brandLogo {
     font-family: 'Monoton', cursive;
     font-size: 42px;
@@ -60,25 +61,6 @@ body {
 .card-text {
     font-size: 24px;
 }
-
-/* #tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-} */
-
 
 
 h3 {
@@ -99,7 +81,7 @@ h3 {
 }
 
 .reviewText {
-word-wrap: break-word
+    word-wrap: break-word
 }
 
 #reviewSearchLabel {
@@ -130,8 +112,6 @@ word-wrap: break-word
 
 .resultImage {
     position: relative;
-    /* top: 40%;
-    transform: translateY(-45%); */
 }
 
 #trackName {
@@ -173,6 +153,14 @@ word-wrap: break-word
 .madaFont {
     font-family: 'Mada', sans-serif;
 
+}
+
+a {
+    color: #dc3545 !important;
+}
+
+a:hover {
+    color:white !important;
 }
 
 h5 {

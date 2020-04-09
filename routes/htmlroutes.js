@@ -12,7 +12,7 @@ module.exports = function (server) {
         res.render("login", { layout: "loginLayout.handlebars" });
     });
 
-    server.get("/about", (req, res) => {
+    server.get("/about", isAuthenticated, (req, res) => {
         res.render("aboutus");
     });
 
