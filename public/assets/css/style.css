@@ -61,11 +61,25 @@ body {
     font-size: 24px;
 }
 
-h4 {
-    text-align: center;
-    border-bottom: 1px solid rgb(246, 70, 76);
-    font-family: 'Monoton', cursive;
+/* #tooltip:hover .tooltiptext {
+    visibility: visible;
 }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+} */
+
+
 
 h3 {
     color: rgb(246, 70, 76);
@@ -156,6 +170,11 @@ word-wrap: break-word
     margin: auto;
 }
 
+.madaFont {
+    font-family: 'Mada', sans-serif;
+
+}
+
 h5 {
     color: white;
     font-family: 'Mada', sans-serif;
@@ -203,6 +222,12 @@ p {
 
 .rating-stars ul>li.star.selected>i.fa {
     color: rgb(246, 70, 76);
+}
+
+h4 {
+    text-align: center;
+    border-bottom: 1px solid rgb(246, 70, 76);
+    font-family: 'Monoton', cursive;
 }
 
 iframe {
